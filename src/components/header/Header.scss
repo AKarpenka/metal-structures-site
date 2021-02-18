@@ -2,10 +2,10 @@
 @import '../../styles/colors';
 
 .top-rect {
+    max-width: 1440px;
     background-color: $navy-color;
     height: 700px;
-}
-
-.text-color-white {
     color: $white-color;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
