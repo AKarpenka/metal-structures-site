@@ -1,0 +1,27 @@
+<svg width="200" height="200">
+  <defs>
+    <symbol id="s-rect">
+      <rect width="70" height="70"/>
+    </symbol>
+    <linearGradient id="g-green"
+      x1="0%" y1="0%"
+      x2="0%" y2="90%"
+    >
+      <stop offset="0%" stop-color="yellowgreen" />
+      <stop offset="90%" stop-color="green" />
+    </linearGradient>
+  </defs>
+
+  <use xlink:href="#s-rect"
+    x="20" y="20"
+    fill="hsla(348, 83%, 47%,.3)"/> <!-- HSLA -->
+  <use xlink:href="#s-rect"
+    x="110" y="20"
+    fill="rgb(255, 215, 0)"/> <!-- RGB -->
+  <use xlink:href="#s-rect"
+    x="20" y="110"
+    fill="url(#g-green)"/> <!-- Градиент -->
+  <use xlink:href="#s-rect"
+    x="110" y="110"
+    fill="skyblue"/> <!-- Цвет по названию -->
+</svg>

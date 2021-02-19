@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../header/Header';
+import Production from '../production/Production';
 import './Main.scss';
 
 class Main extends React.Component {
@@ -8,8 +9,11 @@ class Main extends React.Component {
     render() {
         return (
             <div>
-                <Header />
-                <div className="ads-rect" />
+                <div className="header">
+                    <div className="blue-trans-rect" />
+                    <Header />
+                </div>
+                <Production />
             </div>
         );
     }

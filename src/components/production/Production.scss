@@ -1,14 +1,10 @@
 @import '~bootswatch/dist/cosmo/bootstrap.min.css';
 @import '../../styles/colors';
 
-.header-rect {
+.production-rect {
     max-width: 1440px;
+    background-color: $white-color;
     height: 700px;
-    color: $white-color;
     padding-top: 15px;
     padding-bottom: 15px;
-}
-
-.font-small {
-    font-size: small;
 }

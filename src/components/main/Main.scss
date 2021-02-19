@@ -1,11 +1,19 @@
 @import '../../styles/colors';
 
-.top-rect {
-    background-color: $navy-color;
-    height: 700px;
+.header {
+    position: relative;
+    // width: 100%;
+    // background: url('../../assets/images/header.svg');
+    background: url('../../assets/images/header.svg') 50% no-repeat;
+    background-size: cover;
 }
 
-.ads-rect {
-    background-color: $white-color;
-    height: 700px;
+.blue-trans-rect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #162D59;
+    opacity: 0.8;
 }
