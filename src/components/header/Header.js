@@ -17,18 +17,18 @@ class Header extends React.Component {
                         <div>МЕТАЛЛОКОНСТРУКЦИИ В ГОМЕЛЕ</div>
                     </div>
                     <div className="col-8">
-                        <div className="d-flex align-items-center justify-content-between">
-                            <div>Главная</div>
-                            <div>Продукция</div>
-                            <div>О нас</div>
-                            <div>Калькулятор стоимости</div>
-                            <div>Контакты</div>
+                        <nav className="d-flex align-items-center justify-content-between">
+                            <div className="menu selected">Главная</div>
+                            <div className="menu">Продукция</div>
+                            <div className="menu">О нас</div>
+                            <div className="menu selected">Калькулятор стоимости</div>
+                            <div className="menu selected">Контакты</div>
                             <div>
                                 <button type="button" className="btn btn-primary">
                                     Заказать звонок
                                 </button>
                             </div>
-                        </div>
+                        </nav>
                     </div>
                 </div>
                 <div className="row justify-content-center text-center mt-5">
