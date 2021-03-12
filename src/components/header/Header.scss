@@ -2,11 +2,22 @@
 @import '../../styles/colors';
 
 .header-rect {
-    max-width: 1440px;
+    position: relative;
     height: 700px;
     color: $white-color;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    width: 100%;
+    .header-sticky {
+        position: sticky;
+        color: $white-color;
+        height: 150px;
+        padding: 15px;
+    }
+}
+
+.header-blackout {
+    position: sticky;
+    top: 0px;
+    background-color: $navy-color;
 }
 
 .font-small {
@@ -44,4 +55,26 @@
         background: $azure-color;
         width: 100%;
     }
+}
+
+.max-width-1440 {
+    max-width: 1440px;
+    margin: auto;
+}
+
+.max-width-750 {
+    max-width: 750px;
+    margin: auto;
+}
+
+.width-33 {
+    width: 33%;
+}
+
+.width-66 {
+    width: 66%;
+}
+
+h1 {
+    font-weight: 400;
 }

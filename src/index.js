@@ -3,9 +3,4 @@ import ReactDOM from 'react-dom';
 import Main from './components/main/Main';
 import './index.scss';
 
-ReactDOM.render(
-    <div>
-        <Main />
-    </div>,
-    document.getElementById('root')
-);
+ReactDOM.render(<Main />, document.getElementById('root'));

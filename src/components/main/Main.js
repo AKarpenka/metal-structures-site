@@ -9,7 +9,7 @@ class Main extends React.Component {
     render() {
         return (
             <div>
-                <div className="header">
+                <div className="header-image">
                     <div className="blue-trans-rect" />
                     <Header />
                 </div>
