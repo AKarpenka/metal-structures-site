@@ -1,49 +1,85 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import './Header.scss';
 
 class Header extends React.Component {
-    static ololo() {}
+    constructor(props) {
+        super(props);
+        this.state = {
+            isScrolled: false
+        };
+    }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+
+    handleScroll = e => {
+        if (window.scrollY === 0) {
+            this.setState({
+                isScrolled: false
+            });
+        } else if (window.scrollY > 0) {
+            this.setState({
+                isScrolled: true
+            });
+        }
+    };
 
     render() {
+        const { isScrolled } = this.state;
         return (
-            <div className="container header-rect">
-                <div className="col-12">
-                    <div className="text-color-white text-right">+375 (29) 154-24-63</div>
-                    <div className="text-color-white text-right">+375 (25) 154-24-63</div>
-                    <div className="text-color-white text-right font-small">Пн-Вс 8.00 - 20.00</div>
-                </div>
-                <div className="row mt-4">
-                    <div className="col-4">
-                        <div>МЕТАЛЛОКОНСТРУКЦИИ В ГОМЕЛЕ</div>
-                    </div>
-                    <div className="col-8">
-                        <nav className="d-flex align-items-center justify-content-between">
-                            <div className="menu selected">Главная</div>
-                            <div className="menu">Продукция</div>
-                            <div className="menu">О нас</div>
-                            <div className="menu selected">Калькулятор стоимости</div>
-                            <div className="menu selected">Контакты</div>
+            <div>
+                <div className="header-rect">
+                    <div className={`header-sticky${isScrolled ? ' header-blackout' : ''}`}>
+                        <div className="max-width-1440">
                             <div>
-                                <button type="button" className="btn btn-primary">
-                                    Заказать звонок
-                                </button>
+                                <p className="text-right mb-0">+375 (29) 154-24-63</p>
+                                <p className="text-right mb-0">+375 (25) 154-24-63</p>
+                                <p className="text-right font-small mb-0">Пн-Вс 8.00 - 20.00</p>
                             </div>
-                        </nav>
-                    </div>
-                </div>
-                <div className="row justify-content-center text-center mt-5">
-                    <div className="col-12">
-                        <h1>Lorem ipsum dolor sit amet</h1>
-                        <div className="w-75 mx-auto mt-4">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                            occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                            mollit anim id est laborum.
+                            <div className="d-flex align-items-center justify-content-between mt-4">
+                                <div className="width-33">
+                                    <span>МЕТАЛЛОКОНСТРУКЦИИ В ГОМЕЛЕ</span>
+                                </div>
+                                <div className="width-66">
+                                    <nav className="d-flex align-items-center justify-content-between">
+                                        <span className="menu selected">Главная</span>
+                                        <span className="menu">Продукция</span>
+                                        <span className="menu">О нас</span>
+                                        <span className="menu">Калькулятор стоимости</span>
+                                        <span className="menu">Контакты</span>
+                                        <div>
+                                            <button type="button" className="btn btn-primary">
+                                                Заказать звонок
+                                            </button>
+                                        </div>
+                                    </nav>
+                                </div>
+                            </div>
                         </div>
-                        <div className="mt-4">ПОДРОБНЕЕ --{'>'}</div>
+                    </div>
+                    <div className="max-width-750 text-center mt-5">
+                        <div>
+                            <h1>ПРОИЗВОДСТВО МЕТАЛЛОКОНСТРУКЦИЙ ПО ИНДИВИДУАЛЬНЫМ ЗАКАЗАМ</h1>
+                            <div className="mt-4">
+                                <p className="mb-0">
+                                    Опыт работы более 15 лет на рынке металлоконструкций. При
+                                    производстве используются современные технологии и уделяется
+                                    внимание тщательному контролю качества производимой продукции.
+                                </p>
+                                <p className="mb-0">
+                                    Всегда готовы проконсультировать и помочь в осуществлении
+                                    наиболее оптимального выбора!
+                                </p>
+                                <p className="mb-0">Работаем по Гомелю и Гомельской области.</p>
+                            </div>
+                            <p className="mt-4">ПОДРОБНЕЕ {'>'}</p>
+                        </div>
                     </div>
                 </div>
             </div>
