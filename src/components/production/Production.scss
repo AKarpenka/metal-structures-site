@@ -4,11 +4,12 @@
 .production-rect {
     background-color: $grey-color;
     height: 950px;
-    .max-width-1060 {
+    .max-width-1090 {
         position: relative;
-        max-width: 1060px;
+        max-width: 1090px;
         margin: auto;
         bottom: 100px;
+        padding: 0 15px;
     }
     .solid-border {
         font-family: Gothem SS Medium;

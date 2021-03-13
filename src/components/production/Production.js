@@ -21,7 +21,7 @@ class Production extends React.Component {
     render() {
         return (
             <div className="production-rect">
-                <div className="max-width-1060">
+                <div className="max-width-1090">
                     <div className="d-flex flex-wrap align-items-center justify-content-between">
                         <ProductCard name="Заборы" image={FenceIcon} link="" />
                         <ProductCard name="Ворота и калитки" image={GateIcon} link="" />
