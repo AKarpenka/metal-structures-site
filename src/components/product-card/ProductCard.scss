@@ -2,6 +2,7 @@
 @import '../../styles/colors';
 
 .product-card {
+    position: relative;
     width: 250px;
     height: 300px;
     background: white;
@@ -26,4 +27,8 @@
     color: $white-color;
     background-color: $navy-color;
     border-color: $navy-color;
+}
+
+.button-pisition {
+    position: absolute;
 }

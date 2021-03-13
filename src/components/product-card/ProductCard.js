@@ -8,11 +8,13 @@ class ProductCard extends React.Component {
         const { name, image, link } = this.props;
         return (
             <div className="product-card">
-                <div className="product-card-header ml-3">{name}</div>
-                <div>{image}</div>
-                <button type="button" className="btn btn-navy">
-                    СМОТРЕТЬ
-                </button>
+                <div className="product-card-header ml-3 mb-2">{name}</div>
+                <img src={image} width="250" height="222" alt="img" />
+                <div className="button-pisition">
+                    <button type="button" className="btn btn-navy">
+                        СМОТРЕТЬ
+                    </button>
+                </div>
                 <div>{link}</div>
             </div>
         );

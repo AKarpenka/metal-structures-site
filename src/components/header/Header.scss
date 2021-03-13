@@ -13,8 +13,8 @@
         position: sticky;
         color: $white-color;
         padding: 15px;
-        .max-width-1440 {
-            max-width: 1440px;
+        .max-width-1150 {
+            max-width: 1150px;
             margin: auto;
             .btn {
                 font-size: 14px;
@@ -25,7 +25,7 @@
 }
 
 .header-blackout {
-    position: sticky;
+    position: fixed;
     top: 0px;
     background-color: $navy-color;
 }
@@ -78,4 +78,12 @@
 
 .dashed-border {
     border-bottom: 1px dashed $white-color;
+}
+
+.width-45 {
+    width: 45%;
+}
+
+.width-55 {
+    width: 55%;
 }
