@@ -10,7 +10,7 @@ class ProductCard extends React.Component {
             <div className="product-card">
                 <div className="product-card-header ml-3 mb-2">{name}</div>
                 <img src={image} width="250" height="222" alt="img" />
-                <div className="button-pisition">
+                <div className="button-position">
                     <button type="button" className="btn btn-navy">
                         СМОТРЕТЬ
                     </button>
