@@ -62,12 +62,12 @@ class Header extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className="max-width-600 text-center mt-5">
+                <div className="max-width-600 text-center mt-4">
                     <div>
                         <p className="about-us-header font-s-28">
                             ПРОИЗВОДСТВО МЕТАЛЛОКОНСТРУКЦИЙ ПО ИНДИВИДУАЛЬНЫМ ЗАКАЗАМ
                         </p>
-                        <div className="about-us-text font-s-18 mt-4">
+                        <div className="about-us-text font-s-18 mt-3">
                             <p className="mb-0">
                                 Опыт работы более 15 лет на рынке металлоконструкций. При
                                 производстве используются современные технологии и уделяется
