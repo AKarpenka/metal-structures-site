@@ -1,36 +1,44 @@
 @import '~bootswatch/dist/cosmo/bootstrap.min.css';
 @import '../../styles/colors';
+@import '../../styles/fonts';
+@import '../../styles/font-sizes';
 
 .product-card {
     position: relative;
     width: 250px;
     height: 300px;
-    background: white;
+    background: $white-color;
     padding-top: 15px;
     padding-bottom: 15px;
-}
+    margin-bottom: 20px;
 
-.product-card-header {
-    font-weight: bold;
-    color: $navy-color;
-}
-
-.btn {
-    font-size: 14px;
-    padding: 2px 15px;
-    &:hover {
-        color: $white-color;
-        text-decoration: none;
+    .product-card-header {
+        font-family: Gotham SS Medium;
+        color: $navy-color;
     }
-}
-.btn-navy {
-    color: $white-color;
-    background-color: $navy-color;
-    border-color: $navy-color;
-}
+    
+    img{
+        object-fit: cover;
+        width: 250px;
+        height: 222px;
+    }
 
-.button-position {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
+    .button-position {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        .btn {
+            font-size: 14px;
+            padding: 2px 15px;
+            &:hover {
+                color: $white-color;
+                text-decoration: none;
+            }
+        }
+        .btn-navy {
+            color: $white-color;
+            background-color: $navy-color;
+            border-color: $navy-color;
+        }
+    }
 }
