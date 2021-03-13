@@ -1,0 +1,30 @@
+@import '~bootswatch/dist/cosmo/bootstrap.min.css';
+@import '../../styles/colors';
+@import '../../styles/fonts';
+@import '../../styles/font-sizes';
+
+.about-us-rect {
+    position: relative;
+    height: 700px;
+    color: $white-color;
+    width: 100%;
+}
+
+.max-width-600 {
+    max-width: 600px;
+    padding-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    .about-us-header {
+        font-family: Gotham SS Medium;
+        line-height: 36px;
+    }
+    .about-us-text {
+        font-family: Gotham SS Light;
+        line-height: 22.5px;
+    }
+}
+
+.dashed-border {
+    border-bottom: 1px dashed $white-color;
+}

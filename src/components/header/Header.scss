@@ -4,14 +4,12 @@
 @import '../../styles/font-sizes';
 
 .header-rect {
-    position: relative;
+    position: absolute;
     z-index: 1;
-    height: 700px;
     color: $white-color;
     width: 100%;
     .header-sticky {
         font-family: Gotham SS Medium;
-        position: sticky;
         color: $white-color;
         padding: 15px;
         .max-width-1150 {
@@ -29,6 +27,7 @@
     position: fixed;
     top: 0px;
     background-color: $navy-color;
+    width: 100%;
 }
 
 .menu {
@@ -62,23 +61,6 @@
         background: $azure-color;
         width: 100%;
     }
-}
-
-.max-width-600 {
-    max-width: 600px;
-    margin: auto;
-    .about-us-header {
-        font-family: Gotham SS Medium;
-        line-height: 36px;
-    }
-    .about-us-text {
-        font-family: Gotham SS Light;
-        line-height: 22.5px;
-    }
-}
-
-.dashed-border {
-    border-bottom: 1px dashed $white-color;
 }
 
 .width-45 {
