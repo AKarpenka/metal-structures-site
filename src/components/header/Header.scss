@@ -1,5 +1,7 @@
 @import '~bootswatch/dist/cosmo/bootstrap.min.css';
 @import '../../styles/colors';
+@import '../../styles/fonts';
+@import '../../styles/font-sizes';
 
 .header-rect {
     position: relative;
@@ -7,10 +9,18 @@
     color: $white-color;
     width: 100%;
     .header-sticky {
+        font-family: Gotham SS Medium;
         position: sticky;
         color: $white-color;
-        height: 150px;
         padding: 15px;
+        .max-width-1440 {
+            max-width: 1440px;
+            margin: auto;
+            .btn {
+                font-size: 14px;
+                padding: 8px 23px;
+            }
+        }
     }
 }
 
@@ -18,10 +28,6 @@
     position: sticky;
     top: 0px;
     background-color: $navy-color;
-}
-
-.font-small {
-    font-size: small;
 }
 
 .menu {
@@ -57,28 +63,17 @@
     }
 }
 
-.max-width-1440 {
-    max-width: 1440px;
+.max-width-600 {
+    max-width: 600px;
     margin: auto;
-}
-
-.max-width-750 {
-    max-width: 750px;
-    margin: auto;
-}
-
-.width-33 {
-    width: 33%;
-}
-
-.width-66 {
-    width: 66%;
-}
-
-.weight-400 {
-    font-weight: 400;
+    .about-us-header {
+        font-family: Gotham SS Medium;
+    }
+    .about-us-text {
+        font-family: Gotham SS Light;
+    }
 }
 
 .dashed-border {
-    border-bottom: 1px dashed #FFF;
+    border-bottom: 1px dashed $white-color;
 }

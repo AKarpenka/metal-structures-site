@@ -18,12 +18,12 @@
     font-size: 14px;
     padding: 2px 15px;
     &:hover {
-        color: #fff;
+        color: $white-color;
         text-decoration: none;
     }
 }
 .btn-navy {
-    color: #fff;
+    color: $white-color;
     background-color: $navy-color;
     border-color: $navy-color;
 }
