@@ -7,7 +7,7 @@ class AboutUs extends React.Component {
     render() {
         return (
             <div className="about-us-rect">
-                <div className="max-width-600 text-center">
+                <div className="max-width-700 text-center">
                     <div>
                         <p className="about-us-header font-s-28">
                             ПРОИЗВОДСТВО МЕТАЛЛОКОНСТРУКЦИЙ ПО ИНДИВИДУАЛЬНЫМ ЗАКАЗАМ
