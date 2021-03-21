@@ -1,10 +1,10 @@
+/* eslint-disable react/self-closing-comp */
 import React from 'react';
 import ProductCard from '../product-card/ProductCard';
 import './Production.scss';
 
 import FenceIcon from '../../assets/images/fence.jpg';
 import GateIcon from '../../assets/images/gate.jpg';
-import EnclosureIcon from '../../assets/images/enclosure.jpg';
 import RailingsIcon from '../../assets/images/railings.jpg';
 import LatticesIcon from '../../assets/images/lattices.jpg';
 import GreenhousesIcon from '../../assets/images/greenhouses.jpg';
@@ -25,7 +25,6 @@ class Production extends React.Component {
                     <div className="d-flex flex-wrap align-items-center justify-content-between">
                         <ProductCard name="Заборы" image={FenceIcon} link="" />
                         <ProductCard name="Ворота и калитки" image={GateIcon} link="" />
-                        <ProductCard name="Ограды" image={EnclosureIcon} link="" />
                         <ProductCard name="Перила" image={RailingsIcon} link="" />
                         <ProductCard name="Решётки" image={LatticesIcon} link="" />
                         <ProductCard name="Теплицы" image={GreenhousesIcon} link="" />
@@ -35,9 +34,13 @@ class Production extends React.Component {
                         <ProductCard name="Стелажи" image={RacksIcon} link="" />
                         <ProductCard name="Рекламные билборды" image={BillboardsIcon} link="" />
                         <ProductCard name="Металлические каркасы" image={FramesIcon} link="" />
+                        <ProductCard name="Другое" image="" link="" />
                     </div>
                     <p className="text-right mt-3">
-                        <span className="solid-border font-s-14">СМОТРЕТЬ ВСЮ ПРОДУКЦИЮ {'>'}</span>
+                        <span className="dashed-border-navy font-s-14">
+                            СМОТРЕТЬ ВСЮ ПРОДУКЦИЮ
+                            <i className="fa fa-chevron-right" aria-hidden="true"></i>
+                        </span>
                     </p>
                 </div>
             </div>

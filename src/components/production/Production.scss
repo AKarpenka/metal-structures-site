@@ -1,19 +1,29 @@
 @import '~bootswatch/dist/cosmo/bootstrap.min.css';
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
 @import '../../styles/colors';
 
 .production-rect {
+    font-family: Gotham SS Medium;
     background-color: $grey-color;
     height: 950px;
     .max-width-1090 {
         position: relative;
         max-width: 1090px;
         margin: auto;
-        bottom: 100px;
+        bottom: 140px;
         padding: 0 15px;
     }
-    .solid-border {
-        font-family: Gothem SS Medium;
+
+    .dashed-border-navy {
+        font-size: 14px;
+        display: inline-flex;
         color: $navy-color;
-        border-bottom: 1px solid $navy-color;
+        border-bottom: 1px dashed $navy-color;
+        cursor: pointer;
+    }
+
+    .fa {
+        margin-top: 4px;
+        margin-left: 4px;
     }
 }

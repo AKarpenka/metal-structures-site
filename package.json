@@ -26,6 +26,7 @@
     "@babel/plugin-transform-runtime": "^7.11.5",
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-react": "^7.6.3",
+    "@fortawesome/fontawesome-free": "^5.15.3",
     "@types/jest": "^24.0.24",
     "babel-eslint": "^10.0.3",
     "enzyme": "^3.10.0",
