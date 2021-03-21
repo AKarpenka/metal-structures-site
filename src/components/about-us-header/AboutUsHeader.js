@@ -24,7 +24,7 @@ class AboutUsHeader extends React.Component {
                                 оптимального выбора!
                             </p>
                             <p className="mb-0">Работаем по Гомелю и Гомельской области.</p>
-                            <p className="margin-top-40">
+                            <p className="margin-top-20">
                                 <span className="dashed-border-white font-s-14">
                                     ПОДРОБНЕЕ О НАС
                                     <i className="fa fa-chevron-right" aria-hidden="true"></i>
