@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './ProductCard.scss';
 
 class ProductCard extends React.Component {
@@ -22,9 +23,9 @@ class ProductCard extends React.Component {
 }
 
 ProductCard.propTypes = {
-    name: ProductCard.string,
-    image: ProductCard.string,
-    link: ProductCard.string
+    name: PropTypes.string,
+    image: PropTypes.string,
+    link: PropTypes.string
 };
 
 export default ProductCard;
