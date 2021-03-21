@@ -11,9 +11,11 @@
     .header-sticky {
         font-family: Gotham SS Medium;
         color: $white-color;
-        padding: 15px;
-        .max-width-1150 {
-            max-width: 1150px;
+        padding-top: 30px;
+        padding-left: 40px;
+        padding-right: 40px;
+        .max-width-1440 {
+            max-width: 1440px;
             margin: auto;
             .btn {
                 font-size: 14px;
@@ -26,8 +28,11 @@
 .header-blackout {
     position: fixed;
     top: 0px;
+    padding-top: 10px !important;
+    padding-bottom: 20px !important;
     background-color: $navy-color;
     width: 100%;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25), 0px 2px 6px 2px rgba(0, 0, 0, 0.2);
 }
 
 .menu {
@@ -69,4 +74,8 @@
 
 .width-55 {
     width: 55%;
+}
+
+.margin-top-10 {
+    margin-top: 10px;
 }

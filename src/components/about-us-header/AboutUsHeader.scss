@@ -12,7 +12,7 @@
 
 .max-width-700 {
     max-width: 700px;
-    padding-top: 200px;
+    padding-top: 205px;
     margin-left: auto;
     margin-right: auto;
     .about-us-header {
@@ -26,5 +26,25 @@
 }
 
 .dashed-border {
+    display: inline-flex;
     border-bottom: 1px dashed $white-color;
+    cursor: pointer;
+    .arrow-right {
+        height: 10px;
+        width: 10px;
+        margin-top: 5.5px;
+        margin-left: 5px;
+        background: url('../../assets/icons/arrow-right.svg');
+    }
 }
+
+.margin-top-20 {
+    margin-top: 10px;
+}
+
+.margin-top-40 {
+    margin-top: 10px;
+}
+
+
+

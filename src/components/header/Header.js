@@ -35,13 +35,13 @@ class Header extends React.Component {
         return (
             <div className="header-rect">
                 <div className={`header-sticky${isScrolled ? ' header-blackout' : ''}`}>
-                    <div className="max-width-1150">
+                    <div className="max-width-1440">
                         <div>
                             <p className="font-s-18 text-right mb-0">+375 (29) 154-24-63</p>
                             <p className="font-s-18 text-right mb-0">+375 (25) 154-24-63</p>
                             <p className="font-s-12 text-right mb-0">Ежедневно с 8:00 до 20:00</p>
                         </div>
-                        <div className="d-flex align-items-center justify-content-between mt-4">
+                        <div className="d-flex align-items-center justify-content-between margin-top-10">
                             <div className="width-45 font-s-20">
                                 <span>МЕТАЛЛОКОНСТРУКЦИИ В ГОМЕЛЕ</span>
                             </div>

@@ -1,7 +1,7 @@
 import React from 'react';
-import './AboutUs.scss';
+import './AboutUsHeader.scss';
 
-class AboutUs extends React.Component {
+class AboutUsHeader extends React.Component {
     static ololo() {}
 
     render() {
@@ -12,7 +12,7 @@ class AboutUs extends React.Component {
                         <p className="about-us-header font-s-28">
                             ПРОИЗВОДСТВО МЕТАЛЛОКОНСТРУКЦИЙ ПО ИНДИВИДУАЛЬНЫМ ЗАКАЗАМ
                         </p>
-                        <div className="about-us-text font-s-18 mt-3">
+                        <div className="about-us-text font-s-18 margin-top-20">
                             <p className="mb-0">
                                 Опыт работы более 15 лет на рынке металлоконструкций. При
                                 производстве используются современные технологии и уделяется
@@ -23,9 +23,9 @@ class AboutUs extends React.Component {
                                 оптимального выбора!
                             </p>
                             <p className="mb-0">Работаем по Гомелю и Гомельской области.</p>
-                            <p className="mt-4">
+                            <p className="margin-top-40">
                                 <span className="dashed-border font-s-14">
-                                    ПОДРОБНЕЕ О НАС {'>'}
+                                    ПОДРОБНЕЕ О НАС <div className="arrow-right" />
                                 </span>
                             </p>
                         </div>
@@ -35,4 +35,4 @@ class AboutUs extends React.Component {
         );
     }
 }
-export default AboutUs;
+export default AboutUsHeader;
