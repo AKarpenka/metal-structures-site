@@ -1,4 +1,5 @@
 @import '~bootswatch/dist/cosmo/bootstrap.min.css';
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
 @import '../../styles/colors';
 @import '../../styles/fonts';
 @import '../../styles/font-sizes';
@@ -25,17 +26,15 @@
     }
 }
 
-.dashed-border {
+.dashed-border-white {
     display: inline-flex;
     border-bottom: 1px dashed $white-color;
     cursor: pointer;
-    .arrow-right {
-        height: 10px;
-        width: 10px;
-        margin-top: 5.5px;
-        margin-left: 5px;
-        background: url('../../assets/icons/arrow-right.svg');
-    }
+}
+
+.fa {
+    margin-top: 4px;
+    margin-left: 4px;
 }
 
 .margin-top-20 {

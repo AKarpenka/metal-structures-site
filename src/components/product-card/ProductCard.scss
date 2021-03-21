@@ -17,7 +17,7 @@
         color: $navy-color;
     }
     
-    img{
+    img {
         object-fit: cover;
         width: 250px;
         height: 222px;
@@ -25,11 +25,12 @@
 
     .button-position {
         position: absolute;
-        bottom: 20px;
-        right: 20px;
+        bottom: 21px;
+        right: 17px;
         .btn {
-            font-size: 14px;
-            padding: 2px 15px;
+            font-family: Gotham SS Medium;
+            font-size: 12px;
+            padding: 4px 23px;
             &:hover {
                 color: $white-color;
                 text-decoration: none;

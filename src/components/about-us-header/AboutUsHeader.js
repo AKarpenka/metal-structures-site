@@ -1,3 +1,4 @@
+/* eslint-disable react/self-closing-comp */
 import React from 'react';
 import './AboutUsHeader.scss';
 
@@ -24,8 +25,9 @@ class AboutUsHeader extends React.Component {
                             </p>
                             <p className="mb-0">Работаем по Гомелю и Гомельской области.</p>
                             <p className="margin-top-40">
-                                <span className="dashed-border font-s-14">
-                                    ПОДРОБНЕЕ О НАС <div className="arrow-right" />
+                                <span className="dashed-border-white font-s-14">
+                                    ПОДРОБНЕЕ О НАС
+                                    <i className="fa fa-chevron-right" aria-hidden="true"></i>
                                 </span>
                             </p>
                         </div>
