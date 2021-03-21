@@ -1,8 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { showCallModal } from '../../redux/actions/modalAction';
 import './Header.scss';
 
-class Header extends React.Component {
+export class Header extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -30,6 +33,10 @@ class Header extends React.Component {
         }
     };
 
+    showCallModalWindow = () => {
+        this.props.showCallModal();
+    };
+
     render() {
         const { isScrolled } = this.state;
         return (
@@ -53,7 +60,11 @@ class Header extends React.Component {
                                     {/* <span className="menu">Калькулятор стоимости</span> */}
                                     <span className="menu">Контакты</span>
                                     <div>
-                                        <button type="button" className="btn btn-primary">
+                                        <button
+                                            type="button"
+                                            className="btn btn-primary"
+                                            onClick={this.showCallModalWindow}
+                                        >
                                             ЗАКАЗАТЬ ЗВОНОК
                                         </button>
                                     </div>
@@ -66,4 +77,13 @@ class Header extends React.Component {
         );
     }
 }
-export default Header;
+
+Header.propTypes = {
+    showCallModal: PropTypes.func
+};
+
+const mapDispatchToProps = {
+    showCallModal
+};
+
+export default connect(null, mapDispatchToProps)(Header);
