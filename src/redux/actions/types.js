@@ -1,2 +1,2 @@
 export const SHOW_CALL_MODAL = 'SHOW_CALL_MODAL';
-export const HIDE_CALL_MODAL = 'SHOW_CALL_MODAL';
+export const HIDE_CALL_MODAL = 'HIDE_CALL_MODAL';

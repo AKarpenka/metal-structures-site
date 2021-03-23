@@ -1,16 +1,16 @@
 import { SHOW_CALL_MODAL, HIDE_CALL_MODAL } from '../actions/types';
 
-const modal = (state = { showCallModal: false }, action) => {
+const modal = (state = { isShownCallPopup: false }, action) => {
     switch (action.type) {
         case SHOW_CALL_MODAL:
             return {
                 ...state,
-                showCallModal: true
+                isShownCallPopup: true
             };
         case HIDE_CALL_MODAL:
             return {
                 ...state,
-                showCallModal: false
+                isShownCallPopup: false
             };
         default:
             return state;
