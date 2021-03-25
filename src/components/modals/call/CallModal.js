@@ -17,19 +17,21 @@ export class CallModal extends React.Component {
                 <p className="text-modal font-s-14">
                     Введите свои данные и мы перезвоним для уточнения деталей:
                 </p>
-                <div className="d-flex justify-content-space-around">
-                    <div className="w-50">
-                        <input type="text" placeholder="Ваше имя *" />
-                        <input type="text" placeholder="Ваш телефон *" />
+                <div className="fields">
+                    <div>
+                        <input type="text" placeholder="Ваше имя *" required />
                     </div>
-                    <div className="w-50">
-                        <input type="text" placeholder="Ваше сообщение" />
+                    <div className="field">
+                        <textarea placeholder="Ваше сообщение" />
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Ваш телефон *" required />
                     </div>
                 </div>
                 <button type="button" className="btn btn-navy" onClick={this.hideCallModalWindow}>
                     ОТПРАВИТЬ
                 </button>
-                <p className="text-modal font-s-11 mt-2">
+                <p className="footer-modal font-s-11">
                     Нажимая на кнопку, вы даете согласие на обработку своих персональных данных
                 </p>
             </div>
