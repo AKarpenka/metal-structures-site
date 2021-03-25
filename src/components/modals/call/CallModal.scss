@@ -1,0 +1,64 @@
+@import '~bootswatch/dist/cosmo/bootstrap.min.css';
+@import '../../../styles/colors';
+@import '../../../styles/fonts';
+@import '../../../styles/font-sizes';
+
+.modal-window {
+    position: fixed;
+    max-width: 600px;
+    background-color: $grey-color;
+    color: $navy-color;
+    padding: 40px;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: -webkit-translate(-50%, -50%);
+    transform: -moz-translate(-50%, -50%);
+    transform: -ms-translate(-50%, -50%);
+    .header-modal {
+        font-family: Gotham SS Medium;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        margin-bottom: 10px;
+    }
+    .text-modal {
+        font-family: Gotham SS Light;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+    }
+    input {
+        font-family: Gotham SS Light;
+        width: 100%;        
+        padding: 15px;
+        border: 1px solid $navy-color;
+        color: $navy-color;
+        &:focus {
+            outline: none;
+        }
+    }
+    input::placeholder {
+        font-family: Gotham SS Light;
+        color: $navy-color;
+    }
+    .btn {
+        font-family: Gotham SS Medium;
+        font-size: 18px;
+        width: 100%;
+        padding: 14px 0px;
+        &:hover {
+            color: $white-color;
+            text-decoration: none;
+        }
+    }
+    .btn-navy {
+        color: $white-color;
+        background-color: $navy-color;
+        border-color: $navy-color;
+    }
+}
+
+
+

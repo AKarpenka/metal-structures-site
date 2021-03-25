@@ -7,6 +7,7 @@ import AboutUsHeader from '../about-us-header/AboutUsHeader';
 import Header from '../header/Header';
 import Production from '../production/Production';
 import './Main.scss';
+import CallModal from '../modals/call/CallModal';
 
 export class Main extends React.Component {
     hideCallModalWindow = () => {
@@ -18,6 +19,7 @@ export class Main extends React.Component {
         return (
             <div>
                 <Header />
+                {isShownCallPopup ? <CallModal /> : <div />}
                 <div
                     className={isShownCallPopup ? 'overlay' : ''}
                     onClick={this.hideCallModalWindow}
