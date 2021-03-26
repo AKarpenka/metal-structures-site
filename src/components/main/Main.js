@@ -6,8 +6,9 @@ import { hideCallModal } from '../../redux/actions/modalAction';
 import AboutUsHeader from '../about-us-header/AboutUsHeader';
 import Header from '../header/Header';
 import Production from '../production/Production';
-import './Main.scss';
 import CallModal from '../modals/call/CallModal';
+import ContactUs from '../contact-us/ContactUs';
+import './Main.scss';
 
 export class Main extends React.Component {
     hideCallModalWindow = () => {
@@ -29,6 +30,7 @@ export class Main extends React.Component {
                     <AboutUsHeader />
                 </div>
                 <Production />
+                <ContactUs />
             </div>
         );
     }
