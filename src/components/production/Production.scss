@@ -5,12 +5,13 @@
 .production-rect {
     font-family: Gotham SS Medium;
     background-color: $grey-color;
-    height: 950px;
+    display: flex;
+    padding-bottom: -10px;
     .max-width-1090 {
         position: relative;
         max-width: 1090px;
         margin: auto;
-        bottom: 130px;
+        bottom: 105px;
         padding: 0 15px;
     }
 

@@ -5,7 +5,8 @@
 
 .contact-us-rect {
     font-family: Gotham SS Medium;
-    background-color: rgba($color: $navy-color, $alpha: 0.8);
+    background-color: $moderate-blue-color;
+    margin-top: -60px;
     .max-width-1090 {
         position: relative;
         max-width: 1090px;
