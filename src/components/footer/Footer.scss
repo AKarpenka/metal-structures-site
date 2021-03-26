@@ -1,0 +1,23 @@
+@import '~bootswatch/dist/cosmo/bootstrap.min.css';
+@import '../../styles/colors';
+@import '../../styles/fonts';
+@import '../../styles/font-sizes';
+
+.footer-rect {
+    font-family: Gotham SS Medium;
+    background-color: $navy-color;
+    .max-width-1090 {
+        position: relative;
+        max-width: 1090px;
+        margin: auto;
+        padding: 20px 15px 30px 15px;
+        p {
+            color: rgba($color: $baby-blue-color, $alpha: 0.5);
+            line-height: 21.6px;
+            margin: 0;
+        }
+        .margin-bottom-20 {
+            margin-bottom: 20px;
+        }
+    }
+}

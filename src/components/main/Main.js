@@ -8,7 +8,9 @@ import Header from '../header/Header';
 import Production from '../production/Production';
 import CallModal from '../modals/call/CallModal';
 import ContactUs from '../contact-us/ContactUs';
+import HowWeWork from '../how-we-work/HowWeWork';
 import './Main.scss';
+import Footer from '../footer/Footer';
 
 export class Main extends React.Component {
     hideCallModalWindow = () => {
@@ -30,7 +32,9 @@ export class Main extends React.Component {
                     <AboutUsHeader />
                 </div>
                 <Production />
+                <HowWeWork />
                 <ContactUs />
+                <Footer />
             </div>
         );
     }
