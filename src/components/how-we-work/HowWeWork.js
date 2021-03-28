@@ -1,3 +1,4 @@
+/* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import HowWeWork1 from '../../assets/images/how_we_work1.png';
 import HowWeWork2 from '../../assets/images/how_we_work2.png';
@@ -8,8 +9,6 @@ import HowWeWork6 from '../../assets/images/how_we_work6.png';
 import './HowWeWork.scss';
 
 class HowWeWork extends React.Component {
-    sendData = () => {};
-
     render() {
         return (
             <div className="how-we-work-rect">
