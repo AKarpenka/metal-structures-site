@@ -1,11 +1,11 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
-import HowWeWork1 from '../../assets/images/how_we_work1.png';
-import HowWeWork2 from '../../assets/images/how_we_work2.png';
-import HowWeWork3 from '../../assets/images/how_we_work3.png';
-import HowWeWork4 from '../../assets/images/how_we_work4.png';
-import HowWeWork5 from '../../assets/images/how_we_work5.png';
-import HowWeWork6 from '../../assets/images/how_we_work6.png';
+import HowWeWork1 from '../../assets/images/how-we-work/how_we_work1.png';
+import HowWeWork2 from '../../assets/images/how-we-work/how_we_work2.png';
+import HowWeWork3 from '../../assets/images/how-we-work/how_we_work3.png';
+import HowWeWork4 from '../../assets/images/how-we-work/how_we_work4.png';
+import HowWeWork5 from '../../assets/images/how-we-work/how_we_work5.png';
+import HowWeWork6 from '../../assets/images/how-we-work/how_we_work6.png';
 import './HowWeWork.scss';
 
 class HowWeWork extends React.Component {
