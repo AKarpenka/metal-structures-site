@@ -1,0 +1,42 @@
+@import '~bootswatch/dist/cosmo/bootstrap.min.css';
+@import '../../styles/colors';
+@import '../../styles/fonts';
+@import '../../styles/font-sizes';
+
+.why-we-card {
+    position: relative;
+    width: 174px;
+    height: 178px;
+    background: $baby-blue-color;
+    margin-top: 106px;
+    padding: 10px;
+    padding-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .circle {
+        position: absolute;
+        left: 22px;
+        top: -65px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 130px;
+        height: 130px;
+        background: rgba($color: $navy-color, $alpha: 0.85);
+        border-radius: 50%;
+    }
+
+    img {
+        height: 73px;
+    }
+    p {
+        font-family: Gotham SS Light;
+        color: $navy-color;
+        font-size: 14px;
+        line-height: 16.8px;
+        text-align: center;
+        white-space: pre-wrap;
+    }
+}

@@ -1,0 +1,43 @@
+@import '~bootswatch/dist/cosmo/bootstrap.min.css';
+@import '../../styles/colors';
+@import '../../styles/fonts';
+@import '../../styles/font-sizes';
+
+.why-we-rect {
+    font-family: Gotham SS Medium;
+    background-color: $grey-color;
+    .max-width-1090 {
+        position: relative;
+        max-width: 1090px;
+        margin: auto;
+        padding: 60px 15px;
+    }
+    .corner-header {
+        position: relative;
+        margin-bottom: 80px;
+        .corner-right {
+            position: absolute;
+            right: 0;
+            width: 50px;
+            min-height: 50px;
+            border-top: 3px solid $azure-color;
+            border-right: 3px solid $azure-color;
+        }
+        .corner-text {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-family: Gotham SS Medium;
+            font-size: 28px;
+            line-height: 33.6px;
+            color: $navy-color;
+        }
+    }
+
+    .max-width-680 {
+        position: relative;
+        max-width: 680px;
+        margin: auto;
+        padding: 0px 15px;
+    }
+}

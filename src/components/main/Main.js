@@ -9,6 +9,7 @@ import Production from '../production/Production';
 import CallModal from '../modals/call/CallModal';
 import ContactUs from '../contact-us/ContactUs';
 import HowWeWork from '../how-we-work/HowWeWork';
+import WhyWe from '../why-we/WhyWe';
 import './Main.scss';
 import Footer from '../footer/Footer';
 
@@ -33,6 +34,7 @@ export class Main extends React.Component {
                 </div>
                 <Production />
                 <HowWeWork />
+                <WhyWe />
                 <ContactUs />
                 <Footer />
             </div>
