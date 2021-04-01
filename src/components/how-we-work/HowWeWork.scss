@@ -41,7 +41,7 @@
     img {
         object-fit: cover;
         width: 211px;
-        height: 200px;
+        height: 180px;
     }
     p {
         font-family: Gotham SS Light;
@@ -63,7 +63,7 @@
     }
     .right-block {
         position: relative;
-        top: -100px;
+        top: -90px;
         .pl-6px {
             padding-left: 6px;
         }
@@ -72,17 +72,17 @@
         display: flex;
         height: 450px;
         .left-lines {
-            height: 200px;
+            height: 180px;
             width: 73px;
             border-top: 1px solid $baby-blue-color;
             border-right: 1px solid $baby-blue-color;
             border-bottom: 1px solid $baby-blue-color;
             position: relative;
             left: 1px;
-            top: 100px;
+            top: 90px;
         }
         .right-lines {
-            height: 200px;
+            height: 180px;
             width: 73px;
             border-top: 1px solid $baby-blue-color;
             border-left: 1px solid $baby-blue-color;
@@ -90,7 +90,7 @@
             position: relative;
         }
         .left-lines:nth-child(2n) {
-            top: 99px;
+            top: 89px;
         }
         .right-lines:nth-child(2n) {
             bottom: 1px;
