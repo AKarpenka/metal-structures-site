@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { showCallModal } from '../../redux/actions/modalAction';
+import Logo from '../../assets/images/LOGO2.png';
 import './Header.scss';
 
 export class Header extends React.Component {
@@ -49,7 +50,8 @@ export class Header extends React.Component {
                             <p className="font-s-12 text-right mb-0">Ежедневно с 8:00 до 20:00</p>
                         </div>
                         <div className="d-flex align-items-center justify-content-between margin-top-10">
-                            <div className="width-45 font-s-20">
+                            <div className="d-flex align-items-center width-45 font-s-20">
+                                <img src={Logo} alt="img" />
                                 <span>МЕТАЛЛОКОНСТРУКЦИИ В ГОМЕЛЕ</span>
                             </div>
                             <div className="width-55 font-s-14">

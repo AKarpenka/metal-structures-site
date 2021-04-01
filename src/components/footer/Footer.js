@@ -1,5 +1,6 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
+import Logo from '../../assets/images/LOGO2.png';
 import './Footer.scss';
 
 class Footer extends React.Component {
@@ -7,7 +8,10 @@ class Footer extends React.Component {
         return (
             <div className="footer-rect">
                 <div className="max-width-1090 text-right">
-                    <p className="margin-bottom-20">Здесь будет логотип</p>
+                    <div className="d-inline-flex align-items-center margin-bottom-20">
+                        <p>Металлоконструкции в Гомеле</p>
+                        <img src={Logo} alt="img" />
+                    </div>
                     <div className="margin-bottom-20">
                         <p>ИП Карпенко Г.Н.</p>
                         <p>УНП 490545970</p>
