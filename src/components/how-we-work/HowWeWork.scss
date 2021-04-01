@@ -91,9 +91,11 @@
         }
         .left-lines:nth-child(2n) {
             top: 89px;
+            height: 182px;
         }
         .right-lines:nth-child(2n) {
             bottom: 1px;
+            height: 181px;
         }
     }
 }
