@@ -1,2 +1,4 @@
 export const SHOW_CALL_MODAL = 'SHOW_CALL_MODAL';
 export const HIDE_CALL_MODAL = 'HIDE_CALL_MODAL';
+export const SHOW_SEND_MODAL = 'SHOW_SEND_MODAL';
+export const HIDE_SEND_MODAL = 'HIDE_SEND_MODAL';

@@ -7,11 +7,13 @@ import AboutUsHeader from '../about-us-header/AboutUsHeader';
 import Header from '../header/Header';
 import Production from '../production/Production';
 import CallModal from '../modals/call/CallModal';
-import ContactUs from '../contact-us/ContactUs';
 import HowWeWork from '../how-we-work/HowWeWork';
 import WhyWe from '../why-we/WhyWe';
-import './Main.scss';
+import TrustUs from '../trust-us/TrustUs';
+import SendUs from '../send-us/SendUs';
+import ContactUs from '../contact-us/ContactUs';
 import Footer from '../footer/Footer';
+import './Main.scss';
 
 export class Main extends React.Component {
     hideCallModalWindow = () => {
@@ -35,6 +37,8 @@ export class Main extends React.Component {
                 <Production />
                 <HowWeWork />
                 <WhyWe />
+                <TrustUs />
+                <SendUs />
                 <ContactUs />
                 <Footer />
             </div>
