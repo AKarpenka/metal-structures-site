@@ -12,7 +12,7 @@ export class CallModal extends React.Component {
 
     render() {
         return (
-            <div className="modal-window text-center">
+            <div className="call-modal-window text-center">
                 <h3 className="header-modal font-s-18">ЗАКАЗАТЬ ЗВОНОК</h3>
                 <p className="text-modal font-s-14">
                     Введите свои данные и мы перезвоним для уточнения деталей:

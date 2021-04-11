@@ -1,0 +1,30 @@
+@import '../../styles/colors';
+
+.header-image {
+    position: relative;
+    background: url('../../assets/images/header.svg') 50% no-repeat;
+    background-size: cover;
+    display: flex;
+}
+
+.blue-trans-rect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #162D59;
+    opacity: 0.8;
+}
+
+.overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    background-color: $black-color;
+    opacity: 0.5;
+    z-index: 1;
+}

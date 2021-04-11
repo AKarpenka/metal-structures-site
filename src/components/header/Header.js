@@ -40,9 +40,14 @@ export class Header extends React.Component {
 
     render() {
         const { isScrolled } = this.state;
+        const { history } = this.props;
         return (
             <div className="header-rect">
-                <div className={`header-sticky${isScrolled ? ' header-blackout' : ''}`}>
+                <div
+                    className={`header-sticky${
+                        isScrolled || window.location.pathname !== '/main' ? ' header-blackout' : ''
+                    }`}
+                >
                     <div className="max-width-1440">
                         <div>
                             <p className="font-s-18 text-right mb-0">+375 (29) 154-24-63</p>
@@ -56,11 +61,27 @@ export class Header extends React.Component {
                             </div>
                             <div className="width-55 font-s-14">
                                 <nav className="d-flex align-items-center justify-content-between">
-                                    <span className="menu selected">Главная</span>
+                                    <span
+                                        className={`menu${
+                                            window.location.pathname === '/main' ? ' selected' : ''
+                                        }`}
+                                        onClick={() => history.push('/main')}
+                                    >
+                                        Главная
+                                    </span>
                                     <span className="menu">Продукция</span>
                                     <span className="menu">О нас</span>
                                     {/* <span className="menu">Калькулятор стоимости</span> */}
-                                    <span className="menu">Контакты</span>
+                                    <span
+                                        className={`menu${
+                                            window.location.pathname === '/contacts'
+                                                ? ' selected'
+                                                : ''
+                                        }`}
+                                        onClick={() => history.push('/contacts')}
+                                    >
+                                        Контакты
+                                    </span>
                                     <div>
                                         <button
                                             type="button"
@@ -81,7 +102,8 @@ export class Header extends React.Component {
 }
 
 Header.propTypes = {
-    showCallModal: PropTypes.func
+    showCallModal: PropTypes.func,
+    history: PropTypes.object
 };
 
 const mapDispatchToProps = {
