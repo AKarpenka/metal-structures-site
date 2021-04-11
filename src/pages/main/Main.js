@@ -7,6 +7,7 @@ import AboutUsHeader from '../../components/about-us-header/AboutUsHeader';
 import Header from '../../components/header/Header';
 import Production from '../../components/production/Production';
 import CallModal from '../../components/modals/call/CallModal';
+import SendModal from '../../components/modals/send/SendModal';
 import HowWeWork from '../../components/how-we-work/HowWeWork';
 import WhyWe from '../../components/why-we/WhyWe';
 import TrustUs from '../../components/trust-us/TrustUs';
@@ -26,14 +27,15 @@ export class Main extends React.Component {
     };
 
     render() {
-        const { isShownCallPopup, history } = this.props;
+        const { isShownCallPopup, isShownSendPopup, history } = this.props;
         return (
             <div>
                 <Header history={history} />
                 {isShownCallPopup ? <CallModal /> : <div />}
+                {isShownSendPopup ? <SendModal /> : <div />}
                 <div
-                    className={isShownCallPopup ? 'overlay' : ''}
-                    onClick={this.hideCallModalWindow}
+                    className={isShownCallPopup || isShownSendPopup ? 'overlay' : ''}
+                    onClick={this.hideModalWindow}
                 />
                 <div className="header-image">
                     <div className="blue-trans-rect" />

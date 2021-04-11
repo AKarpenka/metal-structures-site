@@ -11,7 +11,7 @@ export class SendModal extends React.Component {
     };
 
     selectFile = event => {
-        const fileTypes = ['image/jpeg', 'image/pjpeg', 'image/png'];
+        const fileTypes = ['image/jpeg', 'application/pdf', 'image/png'];
         if (
             fileTypes.includes(event.target.files[0].type) &&
             (event.target.files[0].size / 1048576).toFixed() < 10
