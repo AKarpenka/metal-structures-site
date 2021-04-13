@@ -1,0 +1,79 @@
+@import '~bootswatch/dist/cosmo/bootstrap.min.css';
+@import '../../styles/colors';
+@import '../../styles/fonts';
+@import '../../styles/font-sizes';
+
+.gallery-rect {
+    font-family: Gotham SS Medium;
+    background-color: $white-color;
+    .max-width-1090 {
+        position: relative;
+        max-width: 1090px;
+        margin: auto;
+        padding: 210px 15px 60px 15px;
+    }
+    .corner-header {
+        position: relative;
+        margin-bottom: 50px;
+        .corner-left {
+            position: absolute;
+            width: 50px;
+            min-height: 50px;
+            border-top: 3px solid $azure-color;
+            border-left: 3px solid $azure-color;
+        }
+        .corner-text {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            font-family: Gotham SS Medium;
+            font-size: 28px;
+            line-height: 25px;
+            color: $navy-color;
+        }
+    }
+    .padding-container {
+        padding: 15px 0 0 22px;
+        color: $navy-color;
+        font-family: Gotham SS Light;
+
+        p {
+            font-size: 18px;
+        }
+
+        .gallery-menu {
+            display: flex;
+        }
+
+        table>tr {
+            border: 0.5px solid rgba($navy-color, 0.1);
+
+            td{
+                padding: 10px 20px;
+                font-size: 14px;
+                white-space: nowrap;
+            }
+        }
+
+        table>tr:hover:not(.nav-active) {
+            background-color: rgba($navy-color, 0.2);
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .nav-active {
+            color: $white-color;
+            background-color: $navy-color;
+            cursor: pointer;
+        }
+
+        .pictures {
+            margin-left: 20px;
+            border: 0.5px solid rgba($navy-color, 0.1);
+            width: 100%;
+        }
+
+        
+
+    }
+}

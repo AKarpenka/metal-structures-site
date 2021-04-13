@@ -69,7 +69,16 @@ export class Header extends React.Component {
                                     >
                                         Главная
                                     </span>
-                                    <span className="menu">Продукция</span>
+                                    <span
+                                        className={`menu${
+                                            window.location.pathname === '/portfolio'
+                                                ? ' selected'
+                                                : ''
+                                        }`}
+                                        onClick={() => history.push('/portfolio')}
+                                    >
+                                        Продукция
+                                    </span>
                                     <span className="menu">О нас</span>
                                     {/* <span className="menu">Калькулятор стоимости</span> */}
                                     <span

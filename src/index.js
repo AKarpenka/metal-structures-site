@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { Route, Switch, Redirect, Router } from 'react-router-dom';
 import Main from './pages/main/Main';
 import Contacts from './pages/contacts/Contacts';
+import Portfolio from './pages/portfolio/Portfolio';
 import createBrowserHistory from './utils/history';
 import createReduxStore from './redux';
 import './index.scss';
@@ -15,6 +16,7 @@ ReactDOM.render(
                 <Redirect exact from="/" to="/main" />
                 <Route path="/main" component={Main} />
                 <Route path="/contacts" component={Contacts} />
+                <Route path="/portfolio" component={Portfolio} />
             </Switch>
         </Router>
     </Provider>,

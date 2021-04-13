@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import modalReducer from './modalReducer';
+import productReducer from './productReducer';
 
 const combine = combineReducers({
-    ...modalReducer
+    ...modalReducer,
+    ...productReducer
 });
 
 const reducers = (state, action) => combine(state, action);
