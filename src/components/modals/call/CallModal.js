@@ -3,9 +3,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { hideCallModal } from '../../../redux/actions/modalAction';
+import api from '../../../api/mails';
 import './CallModal.scss';
 
 export class CallModal extends React.Component {
+    sendMail = userData => {
+        return api.callMe(userData).then(() => this.hideCallModalWindow());
+    };
+
     hideCallModalWindow = () => {
         this.props.hideCallModal();
     };
@@ -28,7 +33,7 @@ export class CallModal extends React.Component {
                         <input type="text" placeholder="Ваш телефон *" required />
                     </div>
                 </div>
-                <button type="button" className="btn btn-navy" onClick={this.hideCallModalWindow}>
+                <button type="button" className="btn btn-navy" onClick={() => this.sendMail('')}>
                     ОТПРАВИТЬ
                 </button>
                 <p className="footer-modal font-s-11">
