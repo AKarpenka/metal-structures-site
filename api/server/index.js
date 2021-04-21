@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
+const responseUtils = require('./response-utils');
 
 const PORT = process.env.PORT || 8888;
 
@@ -28,11 +29,9 @@ app.post('/callMe', (req, res) => {
 
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
-            console.log(error);
-            res.end();
+            responseUtils.createErrorResponse(res, error);
         } else {
-            console.log(`Email sent: ${info.response}`);
-            res.end();
+            responseUtils.createSuccessResponse(res, `Email sent: ${info.response}`);
         }
     });
 });
