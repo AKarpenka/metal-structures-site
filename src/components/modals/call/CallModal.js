@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { askForRecalling } from '../../../redux/actions/requestActions';
 import './CallModal.scss';
+import Spinner from '../../spinner/Spinner';
 
 export class CallModal extends React.Component {
     constructor(props) {
@@ -35,6 +36,7 @@ export class CallModal extends React.Component {
 
     render() {
         const { username, telephone, message } = this.state;
+        const { isSending } = this.props;
 
         return (
             <div className="call-modal-window text-center">
@@ -43,36 +45,38 @@ export class CallModal extends React.Component {
                     Введите свои данные и мы перезвоним для уточнения деталей:
                 </p>
                 <form onSubmit={this.handleSubmit}>
-                    <div className="fields">
-                        <div>
-                            <input
-                                type="text"
-                                placeholder="Ваше имя *"
-                                value={username}
-                                onChange={this.handleUsernameChange}
-                                required
-                            />
+                    <fieldset disabled={isSending}>
+                        <div className="fields">
+                            <div>
+                                <input
+                                    type="text"
+                                    placeholder="Ваше имя *"
+                                    value={username}
+                                    onChange={this.handleUsernameChange}
+                                    required
+                                />
+                            </div>
+                            <div className="field">
+                                <textarea
+                                    placeholder="Ваше сообщение"
+                                    value={message}
+                                    onChange={this.handleMessageChange}
+                                />
+                            </div>
+                            <div>
+                                <input
+                                    type="text"
+                                    placeholder="Ваш телефон *"
+                                    value={telephone}
+                                    onChange={this.handleTelephoneChange}
+                                    required
+                                />
+                            </div>
                         </div>
-                        <div className="field">
-                            <textarea
-                                placeholder="Ваше сообщение"
-                                value={message}
-                                onChange={this.handleMessageChange}
-                            />
-                        </div>
-                        <div>
-                            <input
-                                type="text"
-                                placeholder="Ваш телефон *"
-                                value={telephone}
-                                onChange={this.handleTelephoneChange}
-                                required
-                            />
-                        </div>
-                    </div>
-                    <button type="submit" className="btn btn-navy">
-                        ОТПРАВИТЬ
-                    </button>
+                        <button type="submit" className="btn btn-navy">
+                            {isSending ? <Spinner /> : 'ОТПРАВИТЬ'}
+                        </button>
+                    </fieldset>
                 </form>
                 <p className="footer-modal font-s-11">
                     Нажимая на кнопку, вы даете согласие на обработку своих персональных данных
@@ -83,11 +87,16 @@ export class CallModal extends React.Component {
 }
 
 CallModal.propTypes = {
+    isSending: PropTypes.bool,
     askForRecalling: PropTypes.func
 };
+
+const mapStateToProps = state => ({
+    isSending: state.request.sending
+});
 
 const mapDispatchToProps = {
     askForRecalling
 };
 
-export default connect(null, mapDispatchToProps)(CallModal);
+export default connect(mapStateToProps, mapDispatchToProps)(CallModal);

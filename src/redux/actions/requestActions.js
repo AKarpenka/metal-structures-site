@@ -13,6 +13,6 @@ export const askForRecalling = formData => async dispatch => {
         dispatch(sended());
         dispatch(hideCallModal());
     } catch (error) {
-        dispatch(sendingError(error));
+        dispatch(sendingError(error.response));
     }
 };
