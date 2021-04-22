@@ -46,36 +46,38 @@ export class ContactUs extends React.Component {
                             <div>ЗАДАЙТЕ ИХ НАМ</div>
                         </div>
                     </div>
-                    <div className="fields">
-                        <div>
-                            <input
-                                type="text"
-                                placeholder="Ваше имя *"
-                                value={username}
-                                onChange={this.handleUsernameChange}
-                                required
-                            />
+                    <form onSubmit={this.handleSubmit}>
+                        <div className="fields">
+                            <div>
+                                <input
+                                    type="text"
+                                    placeholder="Ваше имя *"
+                                    value={username}
+                                    onChange={this.handleUsernameChange}
+                                    required
+                                />
+                            </div>
+                            <div className="field">
+                                <textarea
+                                    placeholder="Ваше сообщение"
+                                    value={message}
+                                    onChange={this.handleMessageChange}
+                                />
+                            </div>
+                            <div>
+                                <input
+                                    type="text"
+                                    placeholder="Ваш телефон *"
+                                    value={telephone}
+                                    onChange={this.handleTelephoneChange}
+                                    required
+                                />
+                            </div>
                         </div>
-                        <div className="field">
-                            <textarea
-                                placeholder="Ваше сообщение"
-                                value={message}
-                                onChange={this.handleMessageChange}
-                            />
-                        </div>
-                        <div>
-                            <input
-                                type="text"
-                                placeholder="Ваш телефон *"
-                                value={telephone}
-                                onChange={this.handleTelephoneChange}
-                                required
-                            />
-                        </div>
-                    </div>
-                    <button type="button" className="btn btn-primary" onClick={this.sendData}>
-                        ОТПРАВИТЬ
-                    </button>
+                        <button type="submit" className="btn btn-primary">
+                            ОТПРАВИТЬ
+                        </button>
+                    </form>
                     <p className="footer-modal font-s-11">
                         Нажимая на кнопку, вы даете согласие на обработку своих персональных данных
                     </p>
