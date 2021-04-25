@@ -1,4 +1,5 @@
 @import '~bootswatch/dist/cosmo/bootstrap.min.css';
+@import 'react-multi-carousel/lib/styles.css';
 @import '../../styles/colors';
 @import '../../styles/fonts';
 @import '../../styles/font-sizes';
@@ -30,6 +31,60 @@
             font-size: 28px;
             line-height: 33.6px;
             color: $navy-color;
+        }
+    }
+    .carousel {
+        margin-top: 140px;
+        .arrow-background-right {
+            position: absolute !important;
+            right: 0px;
+            z-index: 1;
+            height: 40px;
+            width: 40px;
+            background-color: $navy-color;
+            cursor: pointer;
+        }
+        
+        .arrow-background-left {
+            position: absolute !important;
+            left: 0px;
+            z-index: 1;
+            height: 40px;
+            width: 40px;
+            background-color: $navy-color;
+            cursor: pointer;
+        }
+        
+        .custom-right-arrow {
+            position: absolute !important;
+            top: 12px;
+            left: 10px;
+            border: 1px solid $white-color;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 6px;
+            transform: rotate(-45deg);
+        }
+        
+        .custom-left-arrow {
+            position: absolute !important;
+            top: 12px;
+            right: 10px;
+            border: 1px solid $white-color;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 6px;
+            transform: rotate(135deg);
+        }
+        
+        .img-style {
+            display: block;
+            margin: auto;
+            align-items: center;
+        }
+        
+        .react-multi-carousel-track {
+            align-items: center !important;
         }
     }
 }
