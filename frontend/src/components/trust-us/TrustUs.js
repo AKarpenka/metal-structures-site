@@ -58,18 +58,16 @@ class TrustUs extends React.Component {
                             <div>ПАРТНЕРЫ</div>
                         </div>
                     </div>
-                    <div className="carousel">
-                        <Carousel
-                            responsive={responsive}
-                            infinite
-                            customRightArrow={<CustomRightArrow />}
-                            customLeftArrow={<CustomLeftArrow />}
-                        >
-                            {fakerData.map(card => {
-                                return <img className="img-style" src={card.image} alt="img" />;
-                            })}
-                        </Carousel>
-                    </div>
+                    <Carousel
+                        responsive={responsive}
+                        infinite
+                        customRightArrow={<CustomRightArrow />}
+                        customLeftArrow={<CustomLeftArrow />}
+                    >
+                        {fakerData.map(card => {
+                            return <img className="img-style" src={card.image} alt="img" />;
+                        })}
+                    </Carousel>
                 </div>
             </div>
         );
