@@ -8,9 +8,11 @@ import AboutUs from './pages/about-us/AboutUs';
 import createBrowserHistory from './utils/history';
 import createReduxStore from './redux';
 import './index.scss';
+import UpArrow from './components/up-arrow/UpArrow';
 
 ReactDOM.render(
     <Provider store={createReduxStore}>
+        <UpArrow />
         <Router history={createBrowserHistory}>
             <Switch>
                 <Redirect exact from="/" to="/main" />
