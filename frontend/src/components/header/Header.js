@@ -63,19 +63,30 @@ export class Header extends React.Component {
                                 <nav className="d-flex align-items-center justify-content-between">
                                     <span
                                         className={`menu${
-                                            window.location.pathname === '/main' ? ' selected' : ''
+                                            window.location.pathname === '/main'
+                                                ? `${' '}selected`
+                                                : ''
                                         }`}
                                         onClick={() => history.push('/main')}
                                     >
                                         Главная
                                     </span>
                                     <span className="menu">Продукция</span>
-                                    <span className="menu">О нас</span>
+                                    <span
+                                        className={`menu${
+                                            window.location.pathname === '/about-us'
+                                                ? `${' '}selected`
+                                                : ''
+                                        }`}
+                                        onClick={() => history.push('/about-us')}
+                                    >
+                                        О нас
+                                    </span>
                                     {/* <span className="menu">Калькулятор стоимости</span> */}
                                     <span
                                         className={`menu${
                                             window.location.pathname === '/contacts'
-                                                ? ' selected'
+                                                ? `${' '}selected`
                                                 : ''
                                         }`}
                                         onClick={() => history.push('/contacts')}

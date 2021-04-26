@@ -7,7 +7,7 @@ class AboutUsHeader extends React.Component {
 
     render() {
         return (
-            <div className="about-us-rect">
+            <div className="about-us-header-rect">
                 <div className="max-width-700 text-center">
                     <div>
                         <p className="about-us-header font-s-28">

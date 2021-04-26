@@ -6,17 +6,16 @@
 
 .trust-us-rect {
     font-family: Gotham SS Medium;
-    background-color: $white-color;
     .max-width-1090 {
         position: relative;
         max-width: 1090px;
         margin: auto;
         padding: 60px 15px;
     }
-    .corner-header {
+    .corner-header-left {
         position: relative;
         margin-bottom: 130px;
-        .corner-left {
+        .corner {
             position: absolute;
             width: 50px;
             min-height: 50px;
@@ -26,6 +25,27 @@
         .corner-text {
             position: absolute;
             left: 20px;
+            top: 20px;
+            font-family: Gotham SS Medium;
+            font-size: 28px;
+            line-height: 33.6px;
+            color: $navy-color;
+        }
+    }
+    .corner-header-right {
+        position: relative;
+        margin-bottom: 130px;
+        .corner {
+            position: absolute;
+            right: 0;
+            width: 50px;
+            min-height: 50px;
+            border-top: 3px solid $azure-color;
+            border-right: 3px solid $azure-color;
+        }
+        .corner-text {
+            position: absolute;
+            right: 20px;
             top: 20px;
             font-family: Gotham SS Medium;
             font-size: 28px;
@@ -84,4 +104,12 @@
     .react-multi-carousel-track {
         align-items: center !important;
     }
+}
+
+.background-grey {
+    background-color: $grey-color;
+}
+
+.background-white {
+    background-color: $white-color;
 }

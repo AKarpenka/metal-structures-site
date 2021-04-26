@@ -49,10 +49,22 @@ class TrustUs extends React.Component {
                 };
             });
         return (
-            <div className="trust-us-rect">
+            <div
+                className={`trust-us-rect${
+                    window.location.pathname === '/main'
+                        ? `${' '}background-white`
+                        : `${' '}background-grey`
+                }`}
+            >
                 <div className="max-width-1090">
-                    <div className="corner-header">
-                        <div className="corner-left" />
+                    <div
+                        className={
+                            window.location.pathname === '/main'
+                                ? 'corner-header-left'
+                                : 'corner-header-right'
+                        }
+                    >
+                        <div className="corner" />
                         <div className="corner-text">
                             <div>НАМ ДОВЕРЯЮТ</div>
                             <div>ПАРТНЕРЫ</div>
