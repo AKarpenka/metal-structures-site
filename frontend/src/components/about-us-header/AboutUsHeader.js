@@ -25,7 +25,7 @@ class AboutUsHeader extends React.Component {
                             <p className="margin-top-20">
                                 <span className="dashed-border-white font-s-14">
                                     ПОДРОБНЕЕ О НАС
-                                    <i className="fa fa-chevron-right" aria-hidden="true"></i>
+                                    <i className="fa fa-chevron-right" aria-hidden="true" />
                                 </span>
                             </p>
                         </div>

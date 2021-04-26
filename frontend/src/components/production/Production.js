@@ -36,7 +36,7 @@ class Production extends React.Component {
                     <p className="text-right mt-3">
                         <span className="dashed-border-navy font-s-14">
                             СМОТРЕТЬ ВСЮ ПРОДУКЦИЮ
-                            <i className="fa fa-chevron-right" aria-hidden="true"></i>
+                            <i className="fa fa-chevron-right" aria-hidden="true" />
                         </span>
                     </p>
                 </div>
