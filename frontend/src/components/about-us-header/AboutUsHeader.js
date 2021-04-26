@@ -1,10 +1,8 @@
-/* eslint-disable react/self-closing-comp */
+/* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import './AboutUsHeader.scss';
 
 class AboutUsHeader extends React.Component {
-    static ololo() {}
-
     render() {
         return (
             <div className="about-us-header-rect">

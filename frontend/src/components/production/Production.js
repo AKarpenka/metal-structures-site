@@ -1,8 +1,7 @@
-/* eslint-disable react/self-closing-comp */
+/* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import ProductCard from '../product-card/ProductCard';
 import './Production.scss';
-
 import FenceIcon from '../../assets/images/production/fence.jpg';
 import GateIcon from '../../assets/images/production/gate.jpg';
 import RailingsIcon from '../../assets/images/production/railings.jpg';
@@ -16,8 +15,6 @@ import BillboardsIcon from '../../assets/images/production/billboards.jpg';
 import FramesIcon from '../../assets/images/production/frames.jpg';
 
 class Production extends React.Component {
-    static ololo() {}
-
     render() {
         return (
             <div className="production-rect">

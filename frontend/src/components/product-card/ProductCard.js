@@ -1,10 +1,9 @@
+/* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import PropTypes from 'prop-types';
 import './ProductCard.scss';
 
 class ProductCard extends React.Component {
-    static ololo() {}
-
     render() {
         const { name, image, link } = this.props;
         return (

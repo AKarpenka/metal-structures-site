@@ -1,9 +1,8 @@
+/* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import './Contacts.scss';
 
 class Contacts extends React.Component {
-    sendData = () => {};
-
     render() {
         return (
             <div className="contacts-rect">
