@@ -1,9 +1,11 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
+import PropTypes from 'prop-types';
 import './AboutUsHeader.scss';
 
 class AboutUsHeader extends React.Component {
     render() {
+        const { history } = this.props;
         return (
             <div className="about-us-header-rect">
                 <div className="max-width-700 text-center">
@@ -23,7 +25,10 @@ class AboutUsHeader extends React.Component {
                             </p>
                             <p className="mb-0">Работаем по Гомелю и Гомельской области.</p>
                             <p className="margin-top-20">
-                                <span className="dashed-border-white font-s-14">
+                                <span
+                                    className="dashed-border-white font-s-14"
+                                    onClick={() => history.push('/about-us')}
+                                >
                                     ПОДРОБНЕЕ О НАС
                                     <i className="fa fa-chevron-right" aria-hidden="true" />
                                 </span>
@@ -35,4 +40,9 @@ class AboutUsHeader extends React.Component {
         );
     }
 }
+
+AboutUsHeader.propTypes = {
+    history: PropTypes.object
+};
+
 export default AboutUsHeader;

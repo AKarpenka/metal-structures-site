@@ -39,7 +39,7 @@ export class Main extends React.Component {
                 />
                 <div className="header-image">
                     <div className="blue-trans-rect" />
-                    <AboutUsHeader />
+                    <AboutUsHeader history={history} />
                 </div>
                 <Production />
                 <HowWeWork />
