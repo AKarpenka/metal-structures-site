@@ -77,7 +77,14 @@ class TrustUs extends React.Component {
                         customLeftArrow={<CustomLeftArrow />}
                     >
                         {fakerData.map(card => {
-                            return <img className="img-style" src={card.image} alt="img" />;
+                            return (
+                                <img
+                                    key={fakerData.length + 1}
+                                    className="img-style"
+                                    src={card.image}
+                                    alt="img"
+                                />
+                            );
                         })}
                     </Carousel>
                 </div>
