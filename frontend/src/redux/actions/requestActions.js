@@ -20,7 +20,9 @@ export const askForRecalling = userData => async dispatch => {
 export const sendDesign = userData => async dispatch => {
     try {
         const formData = new FormData();
-        formData.append('userData', userData);
+        formData.append('username', userData.username);
+        formData.append('telephone', userData.telephone);
+        formData.append('message', userData.message);
         formData.append('file', userData.file);
         dispatch(sending());
         await api.sendDesign(formData);
