@@ -9,20 +9,26 @@
     color: $white-color;
     width: 100%;
     margin-bottom: 186px;
-}
 
-.max-width-700 {
-    max-width: 700px;
-    padding-top: 215px;
-    margin-left: auto;
-    margin-right: auto;
-    .about-us-header {
-        font-family: Gotham SS Medium;
-        line-height: 36px;
+    .max-width-700 {
+        max-width: 700px;
+        padding-top: 215px;
+        margin-left: auto;
+        margin-right: auto;
+        .about-us-header {
+            font-family: Gotham SS Medium;
+            line-height: 36px;
+        }
+        .about-us-text {
+            font-family: Gotham SS Light;
+            line-height: 22.5px;
+        }
     }
-    .about-us-text {
-        font-family: Gotham SS Light;
-        line-height: 22.5px;
+
+    .fa {
+        margin-top: 6px;
+        margin-left: 4px;
+        font-size: 10px;
     }
 }
 
@@ -30,12 +36,6 @@
     display: inline-flex;
     border-bottom: 1px dashed $white-color;
     cursor: pointer;
-}
-
-.fa {
-    margin-top: 6px;
-    margin-left: 4px;
-    font-size: 10px;
 }
 
 .margin-top-20 {

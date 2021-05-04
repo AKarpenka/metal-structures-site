@@ -2,7 +2,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { hideCallModal, hideSendModal } from '../../redux/actions/modalAction';
 import AboutUsHeader from '../../components/about-us-header/AboutUsHeader';
 import Header from '../../components/header/Header';
 import Production from '../../components/production/Production';
@@ -21,11 +20,6 @@ export class Main extends React.Component {
         window.scrollTo(0, 0);
     }
 
-    hideModalWindow = () => {
-        this.props.hideCallModal();
-        this.props.hideSendModal();
-    };
-
     render() {
         const { isShownCallPopup, isShownSendPopup, history } = this.props;
         return (
@@ -33,10 +27,7 @@ export class Main extends React.Component {
                 <Header history={history} />
                 {isShownCallPopup ? <CallModal /> : <div />}
                 {isShownSendPopup ? <SendModal /> : <div />}
-                <div
-                    className={isShownCallPopup || isShownSendPopup ? 'overlay' : ''}
-                    onClick={this.hideModalWindow}
-                />
+                <div className={isShownCallPopup || isShownSendPopup ? 'overlay' : ''} />
                 <div className="header-image">
                     <div className="blue-trans-rect" />
                     <AboutUsHeader history={history} />
@@ -66,9 +57,4 @@ const mapStateToProps = state => ({
     isShownSendPopup: state.modal.isShownSendPopup
 });
 
-const mapDispatchToProps = {
-    hideCallModal,
-    hideSendModal
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Main);
+export default connect(mapStateToProps, null)(Main);

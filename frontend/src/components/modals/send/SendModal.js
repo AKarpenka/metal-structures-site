@@ -4,6 +4,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { sendDesign } from '../../../redux/actions/requestActions';
+import { hideSendModal } from '../../../redux/actions/modalAction';
 import './SendModal.scss';
 import Spinner from '../../spinner/Spinner';
 
@@ -13,6 +14,10 @@ export class SendModal extends React.Component {
         this.state = { username: '', telephone: '', message: '', file: {} };
         this.selectFile = this.selectFile.bind(this);
     }
+
+    hideSendModal = () => {
+        this.props.hideSendModal();
+    };
 
     handleUsernameChange = event => {
         this.setState({ username: event.target.value });
@@ -28,7 +33,7 @@ export class SendModal extends React.Component {
 
     handleSubmit = event => {
         event && event.preventDefault();
-        if (!!this.state.username && !!this.state.telephone) {
+        if (!!this.state.username && !!this.state.telephone && !!this.state.file) {
             this.props.sendDesign({
                 username: this.state.username,
                 telephone: this.state.telephone,
@@ -55,6 +60,9 @@ export class SendModal extends React.Component {
         const { isSending } = this.props;
         return (
             <div className="send-modal-window">
+                <div>
+                    <i className="fa fa-times" aria-hidden="true" onClick={this.hideSendModal} />
+                </div>
                 <div className="text-center">
                     <h3 className="header-modal font-s-18">ОТПРАВИТЬ ЧЕРТЕЖ НА РАСЧЕТ</h3>
                     <p className="text-modal font-s-14">
@@ -113,7 +121,8 @@ export class SendModal extends React.Component {
 
 SendModal.propTypes = {
     isSending: PropTypes.bool,
-    sendDesign: PropTypes.func
+    sendDesign: PropTypes.func,
+    hideSendModal: PropTypes.func
 };
 
 const mapStateToProps = state => ({
@@ -121,7 +130,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-    sendDesign
+    sendDesign,
+    hideSendModal
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SendModal);

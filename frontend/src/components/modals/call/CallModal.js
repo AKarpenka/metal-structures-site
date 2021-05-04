@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { askForRecalling } from '../../../redux/actions/requestActions';
+import { hideCallModal } from '../../../redux/actions/modalAction';
 import './CallModal.scss';
 import Spinner from '../../spinner/Spinner';
 
@@ -10,6 +11,10 @@ export class CallModal extends React.Component {
         super(props);
         this.state = { username: '', telephone: '', message: '' };
     }
+
+    hideCallModal = () => {
+        this.props.hideCallModal();
+    };
 
     handleUsernameChange = event => {
         this.setState({ username: event.target.value });
@@ -40,6 +45,9 @@ export class CallModal extends React.Component {
 
         return (
             <div className="call-modal-window text-center">
+                <div>
+                    <i className="fa fa-times" aria-hidden="true" onClick={this.hideCallModal} />
+                </div>
                 <h3 className="header-modal font-s-18">ЗАКАЗАТЬ ЗВОНОК</h3>
                 <p className="text-modal font-s-14">
                     Введите свои данные и мы перезвоним для уточнения деталей:
@@ -88,7 +96,8 @@ export class CallModal extends React.Component {
 
 CallModal.propTypes = {
     isSending: PropTypes.bool,
-    askForRecalling: PropTypes.func
+    askForRecalling: PropTypes.func,
+    hideCallModal: PropTypes.func
 };
 
 const mapStateToProps = state => ({
@@ -96,7 +105,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-    askForRecalling
+    askForRecalling,
+    hideCallModal
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CallModal);
