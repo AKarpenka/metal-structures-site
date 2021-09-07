@@ -1,4 +1,5 @@
 @import '~bootswatch/dist/cosmo/bootstrap.min.css';
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
 @import '../../../styles/colors';
 @import '../../../styles/fonts';
 @import '../../../styles/font-sizes';
@@ -57,6 +58,7 @@
         }
     }
     .upload-button {
+        text-align: initial;
         input {
             font-family: Gotham SS Light;
             font-size: 12px;
@@ -96,6 +98,13 @@
         font-family: Gotham SS Light;
         margin-bottom: 0;
         margin-top: 7px;
+    }
+
+    .fa {
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        top: 20px;
     }
 }
 
