@@ -17,6 +17,7 @@ import {
     showOther
 } from '../../redux/actions/productAction';
 import './Gallery.scss';
+import GridGallery from '../grid-gallery/GridGallery';
 
 class Gallery extends React.Component {
     changeCategory = category => {
@@ -153,7 +154,9 @@ class Gallery extends React.Component {
                                 </tr>
                             </table>
                             <div className="pictures">
-                                <p>fdfdfsfd</p>
+                                <p className="pic-title">Заборы</p>
+                                <p className="pic-subtitle">15 фотографий</p>
+                                <GridGallery />
                             </div>
                         </div>
                     </div>

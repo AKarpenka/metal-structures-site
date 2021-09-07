@@ -9,6 +9,7 @@ import SendModal from '../../components/modals/send/SendModal';
 import Gallery from '../../components/gallery/Gallery';
 import SendUs from '../../components/send-us/SendUs';
 import ContactUs from '../../components/contact-us/ContactUs';
+import Footer from '../../components/footer/Footer';
 import './Portfolio.scss';
 
 export class Portfolio extends React.Component {
@@ -35,6 +36,7 @@ export class Portfolio extends React.Component {
                 <Gallery />
                 <SendUs />
                 <ContactUs />
+                <Footer />
             </div>
         );
     }

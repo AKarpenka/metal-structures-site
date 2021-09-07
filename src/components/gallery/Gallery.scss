@@ -71,6 +71,24 @@
             margin-left: 20px;
             border: 0.5px solid rgba($navy-color, 0.1);
             width: 100%;
+            padding: 10px;
+
+            p {
+                margin: 0;
+            }
+
+            .pic-title {
+                text-align: center;
+                font-size: 18px;
+                font-family: Gotham SS Medium;
+            }
+
+            .pic-subtitle {
+                text-align: center;
+                font-size: 14px;
+                font-family: Gotham SS Light;
+                margin-bottom: 15px;
+            }
         }
 
         
