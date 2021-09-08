@@ -5,6 +5,7 @@ import { Route, Switch, Redirect, Router } from 'react-router-dom';
 import Main from './pages/main/Main';
 import Contacts from './pages/contacts/Contacts';
 import AboutUs from './pages/about-us/AboutUs';
+import Portfolio from './pages/portfolio/Portfolio';
 import createBrowserHistory from './utils/history';
 import createReduxStore from './redux';
 import './index.scss';

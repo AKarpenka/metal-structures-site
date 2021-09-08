@@ -81,8 +81,6 @@ export class Header extends React.Component {
                                     >
                                         Продукция
                                     </span>
-                                    <span className="menu">О нас</span>
-                                    <span className="menu">Продукция</span>
                                     <span
                                         className={`menu${
                                             window.location.pathname === '/about-us'
