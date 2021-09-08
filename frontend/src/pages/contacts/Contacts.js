@@ -8,6 +8,7 @@ import SendModal from '../../components/modals/send/SendModal';
 import ContactsBlock from '../../components/contacts/Contacts';
 import SendUs from '../../components/send-us/SendUs';
 import ContactUs from '../../components/contact-us/ContactUs';
+import Footer from '../../components/footer/Footer';
 import './Contacts.scss';
 
 export class Contacts extends React.Component {
@@ -26,6 +27,7 @@ export class Contacts extends React.Component {
                 <ContactsBlock />
                 <SendUs />
                 <ContactUs />
+                <Footer />
             </div>
         );
     }

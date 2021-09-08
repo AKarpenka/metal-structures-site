@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
 import modalReducer from './modalReducer';
+import productReducer from './productReducer';
 import requestReducer from './requestReducer';
 
 const combine = combineReducers({
     ...modalReducer,
+    ...productReducer,
     ...requestReducer
 });
 
