@@ -1,0 +1,31 @@
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+@import '../../styles/colors';
+
+.up-arrow-background {
+    position: fixed;
+    z-index: 2;
+    bottom: 20px;
+    right: 20px;
+    height: 40px;
+    width: 40px;
+    background-color: $black-color;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.4;
+
+    .up-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: inherit;
+    }
+    .fa {
+        color: $white-color;
+        margin-left: -1px;
+        margin-top: -5px;
+        font-size: 20px;
+    }
+}
+.up-arrow-background:hover {
+    opacity: 0.6;
+}
