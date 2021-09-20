@@ -18,45 +18,60 @@ import {
 } from '../../redux/actions/productAction';
 import './Gallery.scss';
 import GridGallery from '../grid-gallery/GridGallery';
+import IMAGES from '../../constants/imagesStore';
 
 class Gallery extends React.Component {
+    static typeOfCategory = 'FENCE';
+
     changeCategory = category => {
         switch (category) {
             case 'FENCE':
                 this.props.showFence();
+                Gallery.typeOfCategory = 'FENCE';
                 break;
             case 'GATE':
                 this.props.showGate();
+                Gallery.typeOfCategory = 'GATE';
                 break;
             case 'RAILINGS':
                 this.props.showRailings();
+                Gallery.typeOfCategory = 'RAILINGS';
                 break;
             case 'GRILLES':
                 this.props.showGrilles();
+                Gallery.typeOfCategory = 'GRILLES';
                 break;
             case 'GREENHOUSES':
                 this.props.showGreenhouses();
+                Gallery.typeOfCategory = 'GREENHOUSES';
                 break;
             case 'VISOR':
                 this.props.showVisor();
+                Gallery.typeOfCategory = 'VISOR';
                 break;
             case 'CANOPIES':
                 this.props.showCanopies();
+                Gallery.typeOfCategory = 'CANOPIES';
                 break;
             case 'STAIRS':
                 this.props.showStairs();
+                Gallery.typeOfCategory = 'STAIRS';
                 break;
             case 'SHELVES':
                 this.props.showShelves();
+                Gallery.typeOfCategory = 'SHELVES';
                 break;
             case 'BILLBOARDS':
                 this.props.showBillboards();
+                Gallery.typeOfCategory = 'BILLBOARDS';
                 break;
             case 'FRAMES':
                 this.props.showFrames();
+                Gallery.typeOfCategory = 'FRAMES';
                 break;
             case 'OTHER':
                 this.props.showOther();
+                Gallery.typeOfCategory = 'OTHER';
                 break;
             default:
         }
@@ -64,6 +79,7 @@ class Gallery extends React.Component {
 
     render() {
         const { product } = this.props;
+        const photos = IMAGES.filter(photo => photo.category === Gallery.typeOfCategory);
         return (
             <div className="gallery-rect">
                 <div className="max-width-1090">
@@ -155,8 +171,8 @@ class Gallery extends React.Component {
                             </table>
                             <div className="pictures">
                                 <p className="pic-title">Заборы</p>
-                                <p className="pic-subtitle">15 фотографий</p>
-                                <GridGallery />
+                                <p className="pic-subtitle">{photos.length} фото</p>
+                                <GridGallery photos={photos} />
                             </div>
                         </div>
                     </div>
