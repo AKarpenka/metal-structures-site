@@ -1,5 +1,6 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './ProductCard.scss';
 
@@ -11,9 +12,16 @@ class ProductCard extends React.Component {
                 <div className="product-card-header font-s-14 ml-3 mb-2">{name}</div>
                 <img src={image} alt="img" />
                 <div className="button-position">
-                    <button type="button" className="btn btn-navy">
-                        СМОТРЕТЬ
-                    </button>
+                    <Link
+                        to={{
+                            pathname: `/portfolio/${link}`,
+                            state: { category: link }
+                        }}
+                    >
+                        <button type="button" className="btn btn-navy">
+                            СМОТРЕТЬ
+                        </button>
+                    </Link>
                 </div>
                 <div>{link}</div>
             </div>

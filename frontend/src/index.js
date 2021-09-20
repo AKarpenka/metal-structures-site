@@ -19,7 +19,7 @@ ReactDOM.render(
                 <Redirect exact from="/" to="/main" />
                 <Route path="/main" component={Main} />
                 <Route path="/contacts" component={Contacts} />
-                <Route path="/portfolio" component={Portfolio} />
+                <Route path="/portfolio/:category" component={Portfolio} />
                 <Route path="/about-us" component={AboutUs} />
             </Switch>
         </Router>

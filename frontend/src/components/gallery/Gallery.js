@@ -2,6 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { useLocation } from 'react-router-dom';
 import {
     showFence,
     showGate,
@@ -23,11 +24,13 @@ import IMAGES from '../../constants/imagesStore';
 class Gallery extends React.Component {
     static typeOfCategory = 'FENCE';
 
-    changeCategory = category => {
-        switch (category) {
+    changeCategory = categoryName => {
+        const { state } = useLocation();
+        switch (categoryName) {
             case 'FENCE':
                 this.props.showFence();
                 Gallery.typeOfCategory = 'FENCE';
+                console.log(state);
                 break;
             case 'GATE':
                 this.props.showGate();

@@ -1,5 +1,6 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
+import PropTypes from 'prop-types';
 import ProductCard from '../product-card/ProductCard';
 import './Production.scss';
 import FenceIcon from '../../assets/images/production/fence.jpg';
@@ -16,11 +17,17 @@ import FramesIcon from '../../assets/images/production/frames.jpg';
 
 class Production extends React.Component {
     render() {
+        const { history } = this.props;
         return (
             <div className="production-rect">
                 <div className="max-width-1090">
                     <div className="d-flex flex-wrap align-items-center justify-content-between">
-                        <ProductCard name="Заборы" image={FenceIcon} link="" />
+                        <ProductCard
+                            name="Заборы"
+                            image={FenceIcon}
+                            link="FENCE"
+                            history={history}
+                        />
                         <ProductCard name="Ворота и калитки" image={GateIcon} link="" />
                         <ProductCard name="Перила" image={RailingsIcon} link="" />
                         <ProductCard name="Решётки" image={LatticesIcon} link="" />
@@ -34,7 +41,10 @@ class Production extends React.Component {
                         <ProductCard name="Другое" image="" link="" />
                     </div>
                     <p className="text-right mt-3">
-                        <span className="dashed-border-navy font-s-14">
+                        <span
+                            className="dashed-border-navy font-s-14"
+                            onClick={() => history.push('/portfolio/FENCE')}
+                        >
                             СМОТРЕТЬ ВСЮ ПРОДУКЦИЮ
                             <i className="fa fa-chevron-right" aria-hidden="true" />
                         </span>
@@ -44,4 +54,9 @@ class Production extends React.Component {
         );
     }
 }
+
+Production.propTypes = {
+    history: PropTypes.object
+};
+
 export default Production;
