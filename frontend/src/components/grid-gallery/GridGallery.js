@@ -1,22 +1,27 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
+import PropTypes from 'prop-types';
 import './GridGallery.scss';
 import Gallery from 'react-grid-gallery';
-import IMAGES from '../../constants/imagesStore';
 
 class GridGallery extends React.Component {
     render() {
+        const { photos } = this.props;
         return (
             <div>
                 <Gallery
-                    images={IMAGES}
+                    images={photos}
                     imageCountSeparator=" из "
-                    showLightboxThumbnails="true"
+                    showLightboxThumbnails
                     enableImageSelection={false}
                 />
             </div>
         );
     }
 }
+
+GridGallery.propTypes = {
+    photos: PropTypes.array
+};
 
 export default GridGallery;

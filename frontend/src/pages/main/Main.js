@@ -32,7 +32,7 @@ export class Main extends React.Component {
                     <div className="blue-trans-rect" />
                     <AboutUsHeader history={history} />
                 </div>
-                <Production />
+                <Production history={history} />
                 <HowWeWork />
                 <WhyWe />
                 <TrustUs />
