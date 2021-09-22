@@ -32,7 +32,7 @@ export default function SendModal() {
         }
     };
 
-    selectFile = event => {
+    const selectFile = event => {
         const fileTypes = ['image/jpeg', 'application/pdf', 'image/png'];
         if (
             fileTypes.includes(event.target.files[0].type) &&

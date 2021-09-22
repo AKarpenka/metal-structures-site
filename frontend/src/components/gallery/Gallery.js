@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import {
@@ -20,11 +20,10 @@ import IMAGES from '../../constants/imagesStore';
 import './Gallery.scss';
 
 export default function Gallery() {
+    const [typeOfCategory, setTypeOfCategory] = useState('FENCE');
     const state = useSelector((state) => state);
     const dispatch = useDispatch();
     // const { state } = useLocation();
-
-    let typeOfCategory = 'FENCE';
 
     const photos = IMAGES.filter(photo => photo.category === typeOfCategory);
 
@@ -32,51 +31,51 @@ export default function Gallery() {
         switch (categoryName) {
             case 'FENCE':
                 dispatch(showFence());
-                typeOfCategory = 'FENCE';
+                setTypeOfCategory('FENCE');
                 break;
             case 'GATE':
                 dispatch(showGate());
-                typeOfCategory = 'GATE';
+                setTypeOfCategory('GATE');
                 break;
             case 'RAILINGS':
                 dispatch(showRailings());
-                typeOfCategory = 'RAILINGS';
+                setTypeOfCategory('RAILINGS');
                 break;
             case 'GRILLES':
                 dispatch(showGrilles());
-                typeOfCategory = 'GRILLES';
+                setTypeOfCategory('GRILLES');
                 break;
             case 'GREENHOUSES':
                 dispatch(showGreenhouses());
-                typeOfCategory = 'GREENHOUSES';
+                setTypeOfCategory('GREENHOUSES');
                 break;
             case 'VISOR':
                 dispatch(showVisor());
-                typeOfCategory = 'VISOR';
+                setTypeOfCategory('VISOR');
                 break;
             case 'CANOPIES':
                 dispatch(showCanopies());
-                typeOfCategory = 'CANOPIES';
+                setTypeOfCategory('CANOPIES');
                 break;
             case 'STAIRS':
                 dispatch(showStairs());
-                typeOfCategory = 'STAIRS';
+                setTypeOfCategory('STAIRS');
                 break;
             case 'SHELVES':
                 dispatch(showShelves());
-                typeOfCategory = 'SHELVES';
+                setTypeOfCategory('SHELVES');
                 break;
             case 'BILLBOARDS':
                 dispatch(showBillboards());
-                typeOfCategory = 'BILLBOARDS';
+                setTypeOfCategory('BILLBOARDS');
                 break;
             case 'FRAMES':
                 dispatch(showFrames());
-                typeOfCategory = 'FRAMES';
+                setTypeOfCategory('FRAMES');
                 break;
             case 'OTHER':
                 dispatch(showOther());
-                typeOfCategory = 'OTHER';
+                setTypeOfCategory('OTHER');
                 break;
             default:
         }

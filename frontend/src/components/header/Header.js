@@ -57,7 +57,7 @@ export default function Header() {
                                 </span>
                                 <span
                                     className={`menu${
-                                        window.location.pathname === '/portfolio'
+                                        window.location.pathname.includes('/portfolio')
                                             ? ' selected'
                                             : ''
                                     }`}
