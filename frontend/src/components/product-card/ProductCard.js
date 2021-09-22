@@ -12,7 +12,7 @@ export default function ProductCard(props) {
                 <Link
                     to={{
                         pathname: `/portfolio/${props.link}`,
-                        state: { category: props.link }
+                        state: { category: 'props.link' }
                     }}
                 >
                     <button type="button" className="btn btn-navy">

@@ -61,7 +61,7 @@ export default function Header() {
                                             ? ' selected'
                                             : ''
                                     }`}
-                                    onClick={() => history.push('/portfolio')}
+                                    onClick={() => history.push('/portfolio/FENCE')}
                                 >
                                     Продукция
                                 </span>

@@ -26,7 +26,11 @@ export default function Production() {
                         image={FenceIcon}
                         link="FENCE"
                     />
-                    <ProductCard name="Ворота и калитки" image={GateIcon} link="" />
+                    <ProductCard 
+                        name="Ворота и калитки"    
+                        image={GateIcon} 
+                        link="GATE" 
+                    />
                     <ProductCard name="Перила" image={RailingsIcon} link="" />
                     <ProductCard name="Решётки" image={LatticesIcon} link="" />
                     <ProductCard name="Теплицы" image={GreenhousesIcon} link="" />

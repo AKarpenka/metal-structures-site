@@ -23,15 +23,16 @@ export default function Gallery() {
     const [typeOfCategory, setTypeOfCategory] = useState('FENCE');
     const state = useSelector((state) => state);
     const dispatch = useDispatch();
-    // const { state } = useLocation();
+    const data = useLocation();
 
     const photos = IMAGES.filter(photo => photo.category === typeOfCategory);
 
-    const changeCategory = categoryName => {   
+    const changeCategory = categoryName => {
         switch (categoryName) {
             case 'FENCE':
                 dispatch(showFence());
                 setTypeOfCategory('FENCE');
+                console.log(data);
                 break;
             case 'GATE':
                 dispatch(showGate());
