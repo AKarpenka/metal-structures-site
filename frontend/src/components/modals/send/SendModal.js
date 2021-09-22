@@ -1,137 +1,105 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/no-unused-prop-types */
-import React from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { sendDesign } from '../../../redux/actions/requestActions';
-import { hideSendModal } from '../../../redux/actions/modalAction';
-import './SendModal.scss';
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { sendDesign } from '../../../redux/requestSlice';
+import { hideSendModal } from '../../../redux/modalSlice';
 import Spinner from '../../spinner/Spinner';
+import './SendModal.scss';
 
-export class SendModal extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { username: '', telephone: '', message: '', file: {} };
-        this.selectFile = this.selectFile.bind(this);
-    }
+export default function SendModal() {
+    const [username, setUsername] = useState('');
+    const [telephone, setTelephone] = useState('');
+    const [message, setMessage] = useState('');
+    const [file, setFile] = useState({});
+    const state = useSelector((state) => state);
+    const dispatch = useDispatch();
 
-    hideSendModal = () => {
-        this.props.hideSendModal();
+    const handleUsernameChange = event => {
+        setUsername(event.target.value);
     };
 
-    handleUsernameChange = event => {
-        this.setState({ username: event.target.value });
+    const handleTelephoneChange = event => {
+        setTelephone(event.target.value);
     };
 
-    handleTelephoneChange = event => {
-        this.setState({ telephone: event.target.value });
+    const handleMessageChange = event => {
+        setMessage(event.target.value);
     };
 
-    handleMessageChange = event => {
-        this.setState({ message: event.target.value });
-    };
-
-    handleSubmit = event => {
+    const handleSubmit = event => {
         event && event.preventDefault();
-        if (!!this.state.username && !!this.state.telephone && !!this.state.file) {
-            this.props.sendDesign({
-                username: this.state.username,
-                telephone: this.state.telephone,
-                message: this.state.message,
-                file: this.state.file
-            });
+        if (!!username && !!telephone && !!file) {
+            dispatch(sendDesign({ username, telephone, message, file }));
         }
     };
 
-    selectFile(event) {
+    selectFile = event => {
         const fileTypes = ['image/jpeg', 'application/pdf', 'image/png'];
         if (
             fileTypes.includes(event.target.files[0].type) &&
             (event.target.files[0].size / 1048576).toFixed() < 10
         ) {
-            this.setState({ file: event.target.files[0] });
+            setFile(event.target.files[0]);
         } else {
             console.log('pnh');
         }
     }
 
-    render() {
-        const { username, telephone, message } = this.state;
-        const { isSending } = this.props;
-        return (
-            <div className="send-modal-window">
-                <div>
-                    <i className="fa fa-times" aria-hidden="true" onClick={this.hideSendModal} />
-                </div>
-                <div className="text-center">
-                    <h3 className="header-modal font-s-18">ОТПРАВИТЬ ЧЕРТЕЖ НА РАСЧЕТ</h3>
-                    <p className="text-modal font-s-14">
-                        Введите свои данные и мы перезвоним для уточнения деталей:
-                    </p>
-                    <form onSubmit={this.handleSubmit}>
-                        <fieldset disabled={isSending}>
-                            <div className="fields">
-                                <div>
-                                    <input
-                                        type="text"
-                                        placeholder="Ваше имя *"
-                                        value={username}
-                                        onChange={this.handleUsernameChange}
-                                        required
-                                    />
-                                </div>
-                                <div className="field">
-                                    <textarea
-                                        placeholder="Ваше сообщение"
-                                        value={message}
-                                        onChange={this.handleMessageChange}
-                                    />
-                                </div>
-                                <div>
-                                    <input
-                                        type="text"
-                                        placeholder="Ваш телефон *"
-                                        value={telephone}
-                                        onChange={this.handleTelephoneChange}
-                                        required
-                                    />
-                                </div>
-                            </div>
-                            <div className="upload-button">
-                                <input
-                                    type="file"
-                                    accept=".png, .jpg, .pdf"
-                                    onChange={this.selectFile}
-                                />
-                                <p>до 10мб / jpg,png,pdf</p>
-                            </div>
-                            <button type="submit" className="btn btn-navy">
-                                {isSending ? <Spinner /> : 'ОТПРАВИТЬ'}
-                            </button>
-                        </fieldset>
-                    </form>
-                </div>
-                <p className="footer-modal font-s-11">
-                    Нажимая на кнопку, вы даете согласие на обработку своих персональных данных
-                </p>
+    return (
+        <div className="send-modal-window">
+            <div>
+                <i className="fa fa-times" aria-hidden="true" onClick={() =>  dispatch(hideSendModal())} />
             </div>
-        );
-    }
+            <div className="text-center">
+                <h3 className="header-modal font-s-18">ОТПРАВИТЬ ЧЕРТЕЖ НА РАСЧЕТ</h3>
+                <p className="text-modal font-s-14">
+                    Введите свои данные и мы перезвоним для уточнения деталей:
+                </p>
+                <form onSubmit={handleSubmit}>
+                    <fieldset disabled={state.request.sending}>
+                        <div className="fields">
+                            <div>
+                                <input
+                                    type="text"
+                                    placeholder="Ваше имя *"
+                                    value={username}
+                                    onChange={handleUsernameChange}
+                                    required
+                                />
+                            </div>
+                            <div className="field">
+                                <textarea
+                                    placeholder="Ваше сообщение"
+                                    value={message}
+                                    onChange={handleMessageChange}
+                                />
+                            </div>
+                            <div>
+                                <input
+                                    type="text"
+                                    placeholder="Ваш телефон *"
+                                    value={telephone}
+                                    onChange={handleTelephoneChange}
+                                    required
+                                />
+                            </div>
+                        </div>
+                        <div className="upload-button">
+                            <input
+                                type="file"
+                                accept=".png, .jpg, .pdf"
+                                onChange={selectFile}
+                            />
+                            <p>до 10мб / jpg,png,pdf</p>
+                        </div>
+                        <button type="submit" className="btn btn-navy">
+                            {state.request.sending ? <Spinner /> : 'ОТПРАВИТЬ'}
+                        </button>
+                    </fieldset>
+                </form>
+            </div>
+            <p className="footer-modal font-s-11">
+                Нажимая на кнопку, вы даете согласие на обработку своих персональных данных
+            </p>
+        </div>
+    );
 }
-
-SendModal.propTypes = {
-    isSending: PropTypes.bool,
-    sendDesign: PropTypes.func,
-    hideSendModal: PropTypes.func
-};
-
-const mapStateToProps = state => ({
-    isSending: state.request.sending
-});
-
-const mapDispatchToProps = {
-    sendDesign,
-    hideSendModal
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(SendModal);

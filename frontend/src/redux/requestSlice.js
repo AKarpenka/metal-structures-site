@@ -1,10 +1,34 @@
-import { SHOW_LOADING_REQUEST, HIDE_LOADING_REQUEST, ERROR_LOADING_REQUEST } from './types';
-import api from '../../api/mails';
-import { hideCallModal, hideSendModal } from './modalAction';
+import { createSlice } from '@reduxjs/toolkit';
+import api from '../api/mails';
 
-export const sending = () => ({ type: SHOW_LOADING_REQUEST, payload: {} });
-export const sended = () => ({ type: HIDE_LOADING_REQUEST, payload: {} });
-export const sendingError = data => ({ type: ERROR_LOADING_REQUEST, payload: data });
+const initialState = {
+    sending: false, error: {}
+};
+
+const requestSlice = createSlice({
+    name: 'request',
+    initialState,
+    reducers: {
+        sending: (state, action) => {
+            state.sending = true;
+            state.error = {};
+        },
+        sended: (state, action) => {
+            state.sending = false;
+            state.error = {};
+        },
+        sendingError: (state, action) => {
+            state.sending = false;
+            state.error = action.payload;
+        },
+    },
+});
+
+export const {
+    sending,
+    sended,
+    sendingError
+} = requestSlice.actions;
 
 export const askForRecalling = userData => async dispatch => {
     try {
@@ -32,3 +56,5 @@ export const sendDesign = userData => async dispatch => {
         dispatch(sendingError(error.response));
     }
 };
+
+export default requestSlice.reducer;

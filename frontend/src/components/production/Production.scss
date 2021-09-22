@@ -21,11 +21,16 @@
         color: $navy-color;
         border-bottom: 1px dashed $navy-color;
         cursor: pointer;
+
+        &:hover {
+            border-bottom: 1px solid $navy-color;
+        }
+
+        i {
+            margin-top: 6px;
+            margin-left: 4px;
+            font-size: 10px;
+        }
     }
 
-    .fa {
-        margin-top: 6px;
-        margin-left: 4px;
-        font-size: 10px;
-    }
 }
