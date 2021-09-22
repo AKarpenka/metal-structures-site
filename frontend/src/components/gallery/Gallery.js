@@ -1,86 +1,26 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router';
 import { useLocation } from 'react-router-dom';
-import {
-    showFence,
-    showGate,
-    showRailings,
-    showGrilles,
-    showGreenhouses,
-    showVisor,
-    showCanopies,
-    showStairs,
-    showShelves,
-    showBillboards,
-    showFrames,
-    showOther
-} from '../../redux/productSlice';
 import GridGallery from '../grid-gallery/GridGallery';
 import IMAGES from '../../constants/imagesStore';
 import './Gallery.scss';
 
 export default function Gallery() {
-    const [typeOfCategory, setTypeOfCategory] = useState('FENCE');
-    const state = useSelector((state) => state);
-    const dispatch = useDispatch();
-    const data = useLocation();
+    const [typeOfCategory, setTypeOfCategory] = useState('');
+    const history = useHistory();
+    const location = useLocation();
+
+    useEffect(() => {
+        if (typeOfCategory === '') {
+            setTypeOfCategory(location.pathname.split('/')[2]);
+            history.push(`/portfolio/${location.pathname.split('/')[2]}`);
+        } else {
+            history.push(`/portfolio/${typeOfCategory}`);
+        }
+    }, [typeOfCategory]);
+
 
     const photos = IMAGES.filter(photo => photo.category === typeOfCategory);
-
-    const changeCategory = categoryName => {
-        switch (categoryName) {
-            case 'FENCE':
-                dispatch(showFence());
-                setTypeOfCategory('FENCE');
-                console.log(data);
-                break;
-            case 'GATE':
-                dispatch(showGate());
-                setTypeOfCategory('GATE');
-                break;
-            case 'RAILINGS':
-                dispatch(showRailings());
-                setTypeOfCategory('RAILINGS');
-                break;
-            case 'GRILLES':
-                dispatch(showGrilles());
-                setTypeOfCategory('GRILLES');
-                break;
-            case 'GREENHOUSES':
-                dispatch(showGreenhouses());
-                setTypeOfCategory('GREENHOUSES');
-                break;
-            case 'VISOR':
-                dispatch(showVisor());
-                setTypeOfCategory('VISOR');
-                break;
-            case 'CANOPIES':
-                dispatch(showCanopies());
-                setTypeOfCategory('CANOPIES');
-                break;
-            case 'STAIRS':
-                dispatch(showStairs());
-                setTypeOfCategory('STAIRS');
-                break;
-            case 'SHELVES':
-                dispatch(showShelves());
-                setTypeOfCategory('SHELVES');
-                break;
-            case 'BILLBOARDS':
-                dispatch(showBillboards());
-                setTypeOfCategory('BILLBOARDS');
-                break;
-            case 'FRAMES':
-                dispatch(showFrames());
-                setTypeOfCategory('FRAMES');
-                break;
-            case 'OTHER':
-                dispatch(showOther());
-                setTypeOfCategory('OTHER');
-                break;
-            default:
-        }
-    };
 
     return (
         <div className="gallery-rect">
@@ -99,74 +39,74 @@ export default function Gallery() {
                     <div className="gallery-menu">
                         <table>
                             <tr
-                                className={state.product.product === 'FENCE' ? 'nav-active' : ''}
-                                onClick={() => changeCategory('FENCE')}
+                                className={typeOfCategory === 'FENCE' ? 'nav-active' : ''}
+                                onClick={() => setTypeOfCategory('FENCE')}
                             >
                                 <td>Заборы</td>
                             </tr>
                             <tr
-                                className={state.product.product === 'GATE' ? 'nav-active' : ''}
-                                onClick={() => changeCategory('GATE')}
+                                className={typeOfCategory === 'GATE' ? 'nav-active' : ''}
+                                onClick={() => setTypeOfCategory('GATE')}
                             >
                                 <td>Ворота и калитки</td>
                             </tr>
                             <tr
-                                className={state.product.product === 'RAILINGS' ? 'nav-active' : ''}
-                                onClick={() => changeCategory('RAILINGS')}
+                                className={typeOfCategory === 'RAILINGS' ? 'nav-active' : ''}
+                                onClick={() => setTypeOfCategory('RAILINGS')}
                             >
                                 <td>Перила</td>
                             </tr>
                             <tr
-                                className={state.product.product === 'GRILLES' ? 'nav-active' : ''}
-                                onClick={() => changeCategory('GRILLES')}
+                                className={typeOfCategory === 'GRILLES' ? 'nav-active' : ''}
+                                onClick={() => setTypeOfCategory('GRILLES')}
                             >
                                 <td>Решетки</td>
                             </tr>
                             <tr
-                                className={state.product.product === 'GREENHOUSES' ? 'nav-active' : ''}
-                                onClick={() => changeCategory('GREENHOUSES')}
+                                className={typeOfCategory === 'GREENHOUSES' ? 'nav-active' : ''}
+                                onClick={() => setTypeOfCategory('GREENHOUSES')}
                             >
                                 <td>Теплицы</td>
                             </tr>
                             <tr
-                                className={state.product.product === 'VISOR' ? 'nav-active' : ''}
-                                onClick={() => changeCategory('VISOR')}
+                                className={typeOfCategory === 'VISOR' ? 'nav-active' : ''}
+                                onClick={() => setTypeOfCategory('VISOR')}
                             >
                                 <td>Козырьки</td>
                             </tr>
                             <tr
-                                className={state.product.product === 'CANOPIES' ? 'nav-active' : ''}
-                                onClick={() => changeCategory('CANOPIES')}
+                                className={typeOfCategory === 'CANOPIES' ? 'nav-active' : ''}
+                                onClick={() => setTypeOfCategory('CANOPIES')}
                             >
                                 <td>Навесы</td>
                             </tr>
                             <tr
-                                className={state.product.product === 'STAIRS' ? 'nav-active' : ''}
-                                onClick={() => changeCategory('STAIRS')}
+                                className={typeOfCategory === 'STAIRS' ? 'nav-active' : ''}
+                                onClick={() => setTypeOfCategory('STAIRS')}
                             >
                                 <td>Лестницы</td>
                             </tr>
                             <tr
-                                className={state.product.product === 'SHELVES' ? 'nav-active' : ''}
-                                onClick={() => changeCategory('SHELVES')}
+                                className={typeOfCategory === 'SHELVES' ? 'nav-active' : ''}
+                                onClick={() => setTypeOfCategory('SHELVES')}
                             >
                                 <td>Стеллажи</td>
                             </tr>
                             <tr
-                                className={state.product.product === 'BILLBOARDS' ? 'nav-active' : ''}
-                                onClick={() => changeCategory('BILLBOARDS')}
+                                className={typeOfCategory === 'BILLBOARDS' ? 'nav-active' : ''}
+                                onClick={() => setTypeOfCategory('BILLBOARDS')}
                             >
                                 <td>Рекламные билборды</td>
                             </tr>
                             <tr
-                                className={state.product.product === 'FRAMES' ? 'nav-active' : ''}
-                                onClick={() => changeCategory('FRAMES')}
+                                className={typeOfCategory === 'FRAMES' ? 'nav-active' : ''}
+                                onClick={() => setTypeOfCategory('FRAMES')}
                             >
                                 <td>Металлические каркасы</td>
                             </tr>
                             <tr
-                                className={state.product.product === 'OTHER' ? 'nav-active' : ''}
-                                onClick={() => changeCategory('OTHER')}
+                                className={typeOfCategory === 'OTHER' ? 'nav-active' : ''}
+                                onClick={() => setTypeOfCategory('OTHER')}
                             >
                                 <td>Другое</td>
                             </tr>
