@@ -36,6 +36,10 @@
     display: inline-flex;
     border-bottom: 1px dashed $white-color;
     cursor: pointer;
+
+    &:hover {
+        border-bottom: 1px solid $white-color;
+    }
 }
 
 .margin-top-20 {

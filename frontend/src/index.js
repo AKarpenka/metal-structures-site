@@ -7,12 +7,12 @@ import Contacts from './pages/contacts/Contacts';
 import AboutUs from './pages/about-us/AboutUs';
 import Portfolio from './pages/portfolio/Portfolio';
 import createBrowserHistory from './utils/history';
-import createReduxStore from './redux';
+import { store } from './redux';
 import './index.scss';
 import UpArrow from './components/up-arrow/UpArrow';
 
 ReactDOM.render(
-    <Provider store={createReduxStore}>
+    <Provider store={store}>
         <UpArrow />
         <Router history={createBrowserHistory}>
             <Switch>

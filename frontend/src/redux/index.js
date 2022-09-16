@@ -1,7 +1,10 @@
-import { applyMiddleware, createStore, compose } from 'redux';
-import thunk from 'redux-thunk';
-import reducers from './reducers';
+import { configureStore } from '@reduxjs/toolkit';
+import modalReducer from './modalSlice';
+import requestReducer from './requestSlice';
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
-export default createStore(reducers, composeEnhancers(applyMiddleware(thunk)));
+export const store = configureStore({
+    reducer: {
+        modal: modalReducer,
+        request: requestReducer
+    }
+});

@@ -1,7 +1,4 @@
-import ES6Promise from 'es6-promise';
 import axios from 'axios';
-
-ES6Promise.polyfill();
 
 const axiosInstance = axios.create({
     baseURL: process.env.REACT_APP_API_URL || 'http://localhost:8888'

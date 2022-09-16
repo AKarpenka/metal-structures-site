@@ -1,8 +1,6 @@
-/* eslint-disable react/no-unused-prop-types */
-import React from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { hideCallModal, hideSendModal } from '../../redux/actions/modalAction';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { hideCallModal, hideSendModal } from '../../redux/modalSlice';
 import Header from '../../components/header/Header';
 import CallModal from '../../components/modals/call/CallModal';
 import SendModal from '../../components/modals/send/SendModal';
@@ -12,52 +10,32 @@ import ContactUs from '../../components/contact-us/ContactUs';
 import Footer from '../../components/footer/Footer';
 import './Portfolio.scss';
 
-export class Portfolio extends React.Component {
-    componentDidMount() {
-        window.scrollTo(0, 0);
-    }
+export default function Portfolio() {
+    const state = useSelector((state) => state);
+    const dispatch = useDispatch();
 
-    hideModalWindow = () => {
-        this.props.hideCallModal();
-        this.props.hideSendModal();
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, []);
+
+    const hideModalWindow = () => {
+        dispatch(hideCallModal());
+        dispatch(hideSendModal());
     };
 
-    render() {
-        const { isShownCallPopup, isShownSendPopup, history } = this.props;
-        return (
-            <div>
-                <Header history={history} />
-                {isShownCallPopup ? <CallModal /> : <div />}
-                {isShownSendPopup ? <SendModal /> : <div />}
-                <div
-                    className={isShownCallPopup || isShownSendPopup ? 'overlay' : ''}
-                    onClick={this.hideModalWindow}
-                />
-                <Gallery />
-                <SendUs />
-                <ContactUs />
-                <Footer />
-            </div>
-        );
-    }
+    return (
+        <div>
+            <Header />
+            {state.modal.isShownCallPopup && <CallModal />}
+            {state.modal.isShownSendPopup && <SendModal />}
+            <div
+                className={state.modal.isShownCallPopup || state.modal.isShownSendPopup ? 'overlay' : ''}
+                onClick={hideModalWindow}
+            />
+            <Gallery />
+            <SendUs />
+            <ContactUs />
+            <Footer />
+        </div>
+    );
 }
-
-Portfolio.propTypes = {
-    isShownCallPopup: PropTypes.bool,
-    isShownSendPopup: PropTypes.bool,
-    hideCallModal: PropTypes.func,
-    hideSendModal: PropTypes.func,
-    history: PropTypes.object
-};
-
-const mapStateToProps = state => ({
-    isShownCallPopup: state.modal.isShownCallPopup,
-    isShownSendPopup: state.modal.isShownSendPopup
-});
-
-const mapDispatchToProps = {
-    hideCallModal,
-    hideSendModal
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Portfolio);

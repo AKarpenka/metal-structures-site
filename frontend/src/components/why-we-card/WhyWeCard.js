@@ -3,23 +3,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './WhyWeCard.scss';
 
-class WhyWeCard extends React.Component {
-    render() {
-        const { icon, text } = this.props;
-        return (
-            <div className="why-we-card">
-                <div className="circle">
-                    <img src={icon} alt="img" />
-                </div>
-                <p>{text}</p>
+export default function WhyWeCard(props) {
+
+    return (
+        <div className="why-we-card">
+            <div className="circle">
+                <img src={props.icon} alt="img" />
             </div>
-        );
-    }
+            <p>{props.text}</p>
+        </div>
+    );
 }
-
-WhyWeCard.propTypes = {
-    icon: PropTypes.string,
-    text: PropTypes.string
-};
-
-export default WhyWeCard;

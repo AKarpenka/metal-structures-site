@@ -1,7 +1,5 @@
-/* eslint-disable react/no-unused-prop-types */
-import React from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import AboutUsHeader from '../../components/about-us-header/AboutUsHeader';
 import Header from '../../components/header/Header';
 import Production from '../../components/production/Production';
@@ -15,46 +13,30 @@ import ContactUs from '../../components/contact-us/ContactUs';
 import Footer from '../../components/footer/Footer';
 import './Main.scss';
 
-export class Main extends React.Component {
-    componentDidMount() {
-        window.scrollTo(0, 0);
-    }
+export default function Main() {
+    const state = useSelector((state) => state);
 
-    render() {
-        const { isShownCallPopup, isShownSendPopup, history } = this.props;
-        return (
-            <div>
-                <Header history={history} />
-                {isShownCallPopup ? <CallModal /> : <div />}
-                {isShownSendPopup ? <SendModal /> : <div />}
-                <div className={isShownCallPopup || isShownSendPopup ? 'overlay' : ''} />
-                <div className="header-image">
-                    <div className="blue-trans-rect" />
-                    <AboutUsHeader history={history} />
-                </div>
-                <Production history={history} />
-                <HowWeWork />
-                <WhyWe />
-                <TrustUs />
-                <SendUs />
-                <ContactUs />
-                <Footer />
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, []);
+
+    return (
+        <div>
+            <Header />
+            {state.modal.isShownCallPopup && <CallModal />}
+            {state.modal.isShownSendPopup && <SendModal />}
+            <div className={state.modal.isShownCallPopup || state.modal.isShownSendPopup ? 'overlay' : ''} />
+            <div className="header-image">
+                <div className="blue-trans-rect" />
+                <AboutUsHeader />
             </div>
-        );
-    }
+            <Production />
+            <HowWeWork />
+            <WhyWe />
+            <TrustUs />
+            <SendUs />
+            <ContactUs />
+            <Footer />
+        </div>
+    );
 }
-
-Main.propTypes = {
-    isShownCallPopup: PropTypes.bool,
-    isShownSendPopup: PropTypes.bool,
-    hideCallModal: PropTypes.func,
-    hideSendModal: PropTypes.func,
-    history: PropTypes.object
-};
-
-const mapStateToProps = state => ({
-    isShownCallPopup: state.modal.isShownCallPopup,
-    isShownSendPopup: state.modal.isShownSendPopup
-});
-
-export default connect(mapStateToProps, null)(Main);
