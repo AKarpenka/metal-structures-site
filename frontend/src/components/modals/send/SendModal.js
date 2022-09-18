@@ -35,8 +35,8 @@ export default function SendModal() {
     const selectFile = event => {
         const fileTypes = ['image/jpeg', 'application/pdf', 'image/png'];
         if (
-            fileTypes.includes(event.target.files[0].type) &&
-            (event.target.files[0].size / 1048576).toFixed() < 10
+            fileTypes.includes(event.target.files[0]?.type) &&
+            (event.target.files[0]?.size / 1048576).toFixed() < 10
         ) {
             setFile(event.target.files[0]);
         } else {
