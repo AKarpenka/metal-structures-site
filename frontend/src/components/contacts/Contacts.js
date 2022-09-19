@@ -12,7 +12,7 @@ export default function Contacts() {
                         <div>КОНТАКТЫ</div>
                     </div>
                 </div>
-                <div className="margin-bottom-20">
+                <div className="margin-bottom-20 font-s-14">
                     <p>
                         <b>A1:</b> +375 (29) 125-28-81
                     </p>
@@ -21,7 +21,7 @@ export default function Contacts() {
                     </p>
                     <p>Ежедневно с 8:00 до 20:00</p>
                 </div>
-                <div className="margin-bottom-20">
+                <div className="margin-bottom-20 font-s-14">
                     <p>
                         <b>e-mail:</b> karko73@mail.ru
                     </p>

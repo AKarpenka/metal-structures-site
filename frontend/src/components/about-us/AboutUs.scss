@@ -9,11 +9,11 @@
         position: relative;
         max-width: 1090px;
         margin: auto;
-        padding: 210px 15px 60px 15px;
+        padding: 170px 15px 60px 15px;
     }
     .corner-header {
         position: relative;
-        margin-bottom: 95px;
+        margin-bottom: 70px;
         .corner-left {
             position: absolute;
             width: 50px;
@@ -33,13 +33,13 @@
     }
     p {
         color: $navy-color;
-        font-size: 18px;
+        font-size: 14px;
         line-height: 21.6px;
-        padding: 0 20px;
         text-align: justify;
+        text-indent: 20px;
 
     }
-    .margin-top-40 {
-        margin-top: 40px;
+    .margin-top-30 {
+        margin-top: 30px;
     }
 }

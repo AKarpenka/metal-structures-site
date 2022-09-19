@@ -19,7 +19,10 @@ export default function UpArrow() {
         }
     };
 
-    const goToTop = () => window.scrollTo(0, 0);
+    const goToTop = () => window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 
     return (
         <div>

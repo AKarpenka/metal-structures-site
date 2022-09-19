@@ -44,12 +44,12 @@
         height: 180px;
     }
     p {
-        font-family: Gotham SS Light;
+        font-family: Gotham SS Medium;
         color: $navy-color;
         font-size: 14px;
         width: 130px;
         text-align: center;
-        margin: 0;
+        margin: 0 10px;
     }
     .step {
         width: 18px;
@@ -73,7 +73,7 @@
         height: 450px;
         .left-lines {
             height: 180px;
-            width: 73px;
+            width: 63px;
             border-top: 1px solid $baby-blue-color;
             border-right: 1px solid $baby-blue-color;
             border-bottom: 1px solid $baby-blue-color;
@@ -83,7 +83,7 @@
         }
         .right-lines {
             height: 180px;
-            width: 73px;
+            width: 63px;
             border-top: 1px solid $baby-blue-color;
             border-left: 1px solid $baby-blue-color;
             border-bottom: 1px solid $baby-blue-color;

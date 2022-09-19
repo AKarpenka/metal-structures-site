@@ -35,8 +35,8 @@ export default function SendModal() {
     const selectFile = event => {
         const fileTypes = ['image/jpeg', 'application/pdf', 'image/png'];
         if (
-            fileTypes.includes(event.target.files[0].type) &&
-            (event.target.files[0].size / 1048576).toFixed() < 10
+            fileTypes.includes(event.target.files[0]?.type) &&
+            (event.target.files[0]?.size / 1048576).toFixed() < 10
         ) {
             setFile(event.target.files[0]);
         } else {
@@ -97,7 +97,7 @@ export default function SendModal() {
                     </fieldset>
                 </form>
             </div>
-            <p className="footer-modal font-s-11">
+            <p className="footer-modal font-s-12 text-center">
                 Нажимая на кнопку, вы даете согласие на обработку своих персональных данных
             </p>
         </div>

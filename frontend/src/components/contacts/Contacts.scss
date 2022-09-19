@@ -4,17 +4,17 @@
 @import '../../styles/font-sizes';
 
 .contacts-rect {
-    font-family: Gotham SS Medium;
+    font-family: Gotham SS Light;
     background-color: $white-color;
     .max-width-1090 {
         position: relative;
         max-width: 1090px;
         margin: auto;
-        padding: 210px 15px 60px 15px;
+        padding: 170px 15px 60px 15px;
     }
     .corner-header {
         position: relative;
-        margin-bottom: 95px;
+        margin-bottom: 70px;
         .corner-left {
             position: absolute;
             width: 50px;
@@ -35,7 +35,7 @@
     p {
         color: $navy-color;
         line-height: 21.6px;
-        margin: 0;
+        margin: 0 20px;
     }
     .margin-bottom-20 {
         margin-bottom: 20px;

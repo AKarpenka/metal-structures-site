@@ -74,7 +74,7 @@ export default function CallModal() {
                     </button>
                 </fieldset>
             </form>
-            <p className="footer-modal font-s-11">
+            <p className="footer-modal font-s-12">
                 Нажимая на кнопку, вы даете согласие на обработку своих персональных данных
             </p>
         </div>

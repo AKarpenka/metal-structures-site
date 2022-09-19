@@ -10,7 +10,7 @@
         position: relative;
         max-width: 1090px;
         margin: auto;
-        padding: 210px 15px 60px 15px;
+        padding: 170px 15px 60px 15px;
     }
     .corner-header {
         position: relative;
@@ -28,17 +28,18 @@
             top: 20px;
             font-family: Gotham SS Medium;
             font-size: 28px;
-            line-height: 25px;
+            line-height: 33.6px;
             color: $navy-color;
         }
     }
     .padding-container {
-        padding: 15px 0 0 22px;
+        padding: 15px 0 0 0;
         color: $navy-color;
         font-family: Gotham SS Light;
 
         p {
-            font-size: 18px;
+            font-size: 14px;
+            text-indent: 20px;
         }
 
         .gallery-menu {

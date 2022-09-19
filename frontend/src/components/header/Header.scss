@@ -20,12 +20,22 @@
             .btn {
                 font-size: 14px;
                 padding: 8px 23px;
+                background-color: $azure-color;
+                border: none;
             }
             img {
                 height: 36px;
                 margin-right: 10px;
             }
         }
+
+        .numbers > p {
+            transition: all .5s;
+        }
+    }
+
+    .title {
+        cursor: default;
     }
 }
 
@@ -37,6 +47,18 @@
     background-color: $navy-color;
     width: 100%;
     box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25), 0px 2px 6px 2px rgba(0, 0, 0, 0.2);
+
+    .numbers {
+        display: flex;
+        justify-content: flex-end;
+
+        p {
+            font-size: 12px;
+            padding-left: 15px;
+            transition: all .5s;
+        }
+    }
+    
 }
 
 .menu {
