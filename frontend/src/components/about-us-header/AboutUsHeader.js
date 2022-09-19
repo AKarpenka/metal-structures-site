@@ -8,17 +8,17 @@ export default function AboutUsHeader() {
         <div className="about-us-header-rect">
             <div className="max-width-700 text-center">
                 <div>
-                    <p className="about-us-header font-s-28">
-                        ПРОИЗВОДСТВО МЕТАЛЛОКОНСТРУКЦИЙ ПО ИНДИВИДУАЛЬНЫМ ЗАКАЗАМ
+                    <p className="about-us-header font-s-18">
+                        ПРОИЗВОДСТВО МЕТАЛЛОКОНСТРУКЦИЙ <br></br>ПО ИНДИВИДУАЛЬНЫМ ЗАКАЗАМ
                     </p>
-                    <div className="about-us-text font-s-18 margin-top-20">
+                    <div className="about-us-text font-s-14 margin-top-20">
                         <p className="mb-0">
-                            Опыт работы более 15 лет на рынке металлоконструкций. При
+                            Опыт работы более 15 лет на рынке металлоконструкций. <br></br>При
                             производстве используются современные технологии и уделяется
                             внимание тщательному контролю качества производимой продукции.
                         </p>
                         <p className="mb-0">
-                            Всегда готовы проконсультировать и помочь в осуществлении наиболее
+                            Всегда готовы проконсультировать и помочь <br></br> в осуществлении наиболее
                             оптимального выбора!
                         </p>
                         <p className="mb-0">Работаем по Гомелю и Гомельской области.</p>

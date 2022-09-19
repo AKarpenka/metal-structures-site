@@ -22,7 +22,6 @@
     }
     .text-modal {
         font-family: Gotham SS Light;
-        margin: 10px 10%;
     }
     .fields {
         display: grid;
@@ -73,14 +72,14 @@
         }
         p {
             font-family: Gotham SS Light;
-            font-size: 11px;
+            font-size: 12px;
             color: rgba($color: $black-color, $alpha: 0.5);
             margin: 0;
         }
     }
     .btn {
         font-family: Gotham SS Medium;
-        font-size: 16px;
+        font-size: 14px;
         width: 100%;
         margin-top: 10px;
         padding: 10px 0px;

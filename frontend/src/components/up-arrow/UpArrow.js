@@ -14,7 +14,6 @@ export default function UpArrow() {
     const handleScroll = e => {
         if (window.scrollY === 0) {
             setScrolled(false);
-            // window.animate({ scrollTop: 0 }, 500);
         } else if (window.scrollY > 0) {
             setScrolled(true);
         }

@@ -41,7 +41,7 @@ export default function Header() {
                         <p className="font-s-12 text-right mb-0">Ежедневно с 8:00 до 20:00</p>
                     </div>
                     <div className="d-flex align-items-center justify-content-between margin-top-10">
-                        <div className="d-flex align-items-center width-45 font-s-20">
+                        <div className="d-flex align-items-center width-45 font-s-18">
                             <img src={Logo} alt="img" />
                             <span className='title'>МЕТАЛЛОКОНСТРУКЦИИ В ГОМЕЛЕ</span>
                         </div>

@@ -97,7 +97,7 @@ export default function SendModal() {
                     </fieldset>
                 </form>
             </div>
-            <p className="footer-modal font-s-11">
+            <p className="footer-modal font-s-12 text-center">
                 Нажимая на кнопку, вы даете согласие на обработку своих персональных данных
             </p>
         </div>
