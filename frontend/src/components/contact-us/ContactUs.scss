@@ -3,6 +3,7 @@
 @import '../../styles/fonts';
 @import '../../styles/font-sizes';
 
+
 .contact-us-rect {
     font-family: Gotham SS Medium;
     background-color: $moderate-blue-color;
@@ -36,38 +37,70 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        grid-column-gap: 10px;
-        grid-row-gap: 10px;
+        grid-column-gap: 25px;
+        grid-row-gap: 25px;
     }
     .field {
         grid-row-start: 1;
         grid-row-end: 3;
         grid-column-start: 2;
     }
-    input, textarea {
+
+    .input {
+        position: relative;
+
         font-family: Gotham SS Light;
         width: 100%;
-        height: 100%;      
-        padding: 15px;
-        border: none;//1px solid $white-color;
+        height: 100%;  
+        border: 0;
         background-color: rgba($color: $white-color, $alpha: 0.7);
         color: $navy-color;
         text-align: start;
         resize: none;
-        &:focus {
+        font-size: 14px;
+
+        textarea {
+            resize: none;
+        }
+        
+        &__label {
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: calc(15px * 0.75) 15px;
+            margin: calc(5px * 0.75) 0;
+            transform: translate(0, 0);
+            transform-origin: 0 0;
+            transition: transform 120ms ease-in;
+            font-size: 18px;
+        }
+        &__field {
+            box-sizing: border-box;
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding: 15px;
+            background: transparent;
+            border: none;
             outline: none;
+            color: $navy-color;
+          
+            &:focus,
+            &:not(:placeholder-shown) {
+                & + .input__label {
+                transform: translate(0, -70%) scale(.8);
+                color:$white-color;
+                outline: none;
+                }
+            }
         }
     }
-    input::placeholder, textarea::placeholder {
-        font-family: Gotham SS Light;
-        color: $navy-color;
-        font-size: 14px;
-    }
+      
     .btn {
         font-family: Gotham SS Medium;
         font-size: 14px;
         width: 25%;
-        margin-top: 10px;
+        margin-top: 25px;
         padding: 10px 0px;
         background-color: $azure-color;
         &:hover {

@@ -43,31 +43,39 @@ export default function CallModal() {
             <form onSubmit={handleSubmit}>
                 <fieldset disabled={state.request.sending}>
                     <div className="fields">
-                        <div>
+                        <label class="input">
                             <input
+                                class="input__field"
                                 type="text"
-                                placeholder="Ваше имя *"
+                                placeholder=" "
                                 value={username}
                                 onChange={handleUsernameChange}
                                 required
                             />
-                        </div>
+                            <span class="input__label">Ваше имя *</span>
+                        </label>
                         <div className="field">
-                            <textarea
-                                placeholder="Ваше сообщение"
-                                value={message}
-                                onChange={handleMessageChange}
-                            />
+                            <label class="input">
+                                <textarea
+                                    class="input__field"
+                                    placeholder=" "
+                                    value={message}
+                                    onChange={handleMessageChange}
+                                />
+                                <span class="input__label">Ваше сообщение</span>
+                            </label>
                         </div>
-                        <div>
+                        <label class="input">
                             <input
+                                class="input__field"
                                 type="text"
-                                placeholder="Ваш телефон *"
+                                placeholder=" "
                                 value={telephone}
                                 onChange={handleTelephoneChange}
                                 required
                             />
-                        </div>
+                            <span class="input__label">Ваш телефон *</span>
+                        </label>
                     </div>
                     <button type="submit" className="btn btn-navy">
                         {state.request.sending ? <Spinner /> : 'ОТПРАВИТЬ'}
