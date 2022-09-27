@@ -43,38 +43,38 @@ export default function CallModal() {
             <form onSubmit={handleSubmit}>
                 <fieldset disabled={state.request.sending}>
                     <div className="fields">
-                        <label class="input">
+                        <label className="input">
                             <input
-                                class="input__field"
+                                className="input__field"
                                 type="text"
                                 placeholder=" "
                                 value={username}
                                 onChange={handleUsernameChange}
                                 required
                             />
-                            <span class="input__label">Ваше имя *</span>
+                            <span className="input__label">Ваше имя *</span>
                         </label>
                         <div className="field">
-                            <label class="input">
+                            <label className="input">
                                 <textarea
-                                    class="input__field"
+                                    className="input__field"
                                     placeholder=" "
                                     value={message}
                                     onChange={handleMessageChange}
                                 />
-                                <span class="input__label">Ваше сообщение</span>
+                                <span className="input__label">Ваше сообщение</span>
                             </label>
                         </div>
-                        <label class="input">
+                        <label className="input">
                             <input
-                                class="input__field"
+                                className="input__field"
                                 type="text"
                                 placeholder=" "
                                 value={telephone}
                                 onChange={handleTelephoneChange}
                                 required
                             />
-                            <span class="input__label">Ваш телефон *</span>
+                            <span className="input__label">Ваш телефон *</span>
                         </label>
                     </div>
                     <button type="submit" className="btn btn-navy">

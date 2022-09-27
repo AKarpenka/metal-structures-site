@@ -86,39 +86,20 @@
             }
         }
     }
-    .upload-button {
-        text-align: initial;
-        input {
-            font-family: Gotham SS Light;
-            font-size: 12px;
-            height: 100%;      
-            padding-top: 25px;
-            color: rgba($color: $black-color, $alpha: 0.5);
-            text-align: start;
-            resize: none;
-            &:focus {
-                outline: none;
-            }
-        }
-        p {
-            font-family: Gotham SS Light;
-            font-size: 12px;
-            color: rgba($color: $black-color, $alpha: 0.5);
-            margin: 0;
-        }
-    }
+    
     .btn {
         font-family: Gotham SS Medium;
         font-size: 14px;
         width: 100%;
-        margin-top: 25px;
         padding: 10px 0px;
         &:hover {
             color: $white-color;
             text-decoration: none;
         }
+        
     }
     .btn-navy {
+        margin-top: 45px;
         color: $white-color;
         background-color: $navy-color;
         border-color: $navy-color;
@@ -137,5 +118,41 @@
     }
 }
 
+.title-dnd {
+    text-align: center;
+    font-size: 14px;
+    font-family: Gotham SS Light;
+    color: $navy-color;
 
+    p {
+        margin: 0;
+    }
 
+    .icon {
+        margin-bottom: 10px;
+        font-size: 34px;
+        color: $azure-color;
+    }
+
+    &-or {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 0 15px 0;
+        color: rgba($navy-color, 0.6);
+
+        .line {
+            border-top: 1px rgba($navy-color, 0.4) solid;
+            width: 50px;
+            margin: 0 5px;
+        }
+    }
+}
+
+.btn-files {
+    color: $white-color;
+    background-color: $azure-color;
+    border-color: $azure-color;
+    font-family: Gotham SS Light !important;
+    padding: 7px 15px!important;
+}

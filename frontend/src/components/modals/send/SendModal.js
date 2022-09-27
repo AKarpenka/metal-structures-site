@@ -4,12 +4,18 @@ import { sendDesign } from '../../../redux/requestSlice';
 import { hideSendModal } from '../../../redux/modalSlice';
 import Spinner from '../../spinner/Spinner';
 import './SendModal.scss';
+import Dropzone from 'react-dropzone-uploader';
+import 'react-dropzone-uploader/dist/styles.css';
+import { getDroppedOrSelectedFiles } from 'html5-file-selector';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFolderOpen } from "@fortawesome/free-regular-svg-icons";
+
 
 export default function SendModal() {
     const [username, setUsername] = useState('');
     const [telephone, setTelephone] = useState('');
     const [message, setMessage] = useState('');
-    const [file, setFile] = useState({});
+    const [files, setFile] = useState([]);
     const state = useSelector((state) => state);
     const dispatch = useDispatch();
 
@@ -27,21 +33,63 @@ export default function SendModal() {
 
     const handleSubmit = event => {
         event && event.preventDefault();
-        if (!!username && !!telephone && !!file) {
-            dispatch(sendDesign({ username, telephone, message, file }));
+        if (!!username && !!telephone && !!files) {
+            dispatch(sendDesign({ username, telephone, message, files }));
         }
     };
 
-    const selectFile = event => {
-        const fileTypes = ['image/jpeg', 'application/pdf', 'image/png'];
-        if (
-            fileTypes.includes(event.target.files[0]?.type) &&
-            (event.target.files[0]?.size / 1048576).toFixed() < 10
-        ) {
-            setFile(event.target.files[0]);
-        } else {
-            console.log('pnh');
+    const onFileChange = ({ meta, file }, status) => { 
+        if (status == 'done') {
+            files.push(file);
+            setFile(files);
+        } else if (status == 'removed') {
+            files
+            const indexOfObject = files.findIndex(obj => {
+                return obj.name === file.name;
+              });
+            files.splice(indexOfObject, 1);
+            setFile(files);
         }
+    }
+
+    const getFilesFromEvent = e => {
+        return new Promise(resolve => {
+            getDroppedOrSelectedFiles(e).then(chosenFiles => {
+                resolve(chosenFiles.map(f => f.fileObject))
+            })
+        })
+    }
+    const selectFileInput = ({ accept, onFiles, files, getFilesFromEvent }) => {
+        const textMsg = files.length > 0 ? 'Выбрать еще файлы' : 'Выберите файлы';
+        return (
+            <div>
+            {files.length <= 0 && 
+                <div className="title-dnd">
+                    <FontAwesomeIcon icon={faFolderOpen} className="icon" />
+                    <p>Переметите сюда файлы <br/> (до 10мб, до 5 файлов)</p>
+                    <div className="title-dnd-or">
+                        <div className="line"></div>
+                        <p> ИЛИ </p>
+                        <div className="line"></div>
+                    </div>
+                </div>
+            }
+                <label className="btn btn-files">
+                    {textMsg}
+                    <input
+                        style={{ display: 'none' }}
+                        type="file"
+                        accept={accept}
+                        multiple
+                        onChange={e => {
+                            getFilesFromEvent(e).then(chosenFiles => {
+                                onFiles(chosenFiles)
+                            })
+                        }}
+                    />
+                </label>
+            </div>
+        )
     }
 
     return (
@@ -57,47 +105,64 @@ export default function SendModal() {
                 <form onSubmit={handleSubmit}>
                     <fieldset disabled={state.request.sending}>
                         <div className="fields">
-                            <label class="input">
+                            <label className="input">
                                 <input
-                                    class="input__field"
+                                    className="input__field"
                                     type="text"
                                     placeholder=" "
                                     value={username}
                                     onChange={handleUsernameChange}
                                     required
                                 />
-                                <span class="input__label">Ваше имя *</span>
+                                <span className="input__label">Ваше имя *</span>
                             </label>
                             <div className="field">
-                                <label class="input">
+                                <label className="input">
                                     <textarea
-                                        class="input__field"
+                                        className="input__field"
                                         placeholder=" "
                                         value={message}
                                         onChange={handleMessageChange}
                                     />
-                                    <span class="input__label">Ваше сообщение</span>
+                                    <span className="input__label">Ваше сообщение</span>
                                 </label>
                             </div>
-                            <label class="input">
+                            <label className="input">
                                 <input
-                                    class="input__field"
+                                    className="input__field"
                                     type="text"
                                     placeholder=" "
                                     value={telephone}
                                     onChange={handleTelephoneChange}
                                     required
                                 />
-                                <span class="input__label">Ваш телефон *</span>
+                                <span className="input__label">Ваш телефон *</span>
                             </label>
                         </div>
                         <div className="upload-button">
-                            <input
-                                type="file"
-                                accept=".png, .jpg, .pdf"
-                                onChange={selectFile}
+                            <Dropzone
+                                onChangeStatus={onFileChange}
+                                InputComponent={selectFileInput}
+                                getFilesFromEvent={getFilesFromEvent}
+                                accept="image/*,application/*"
+                                maxFiles={5}
+                                maxSizeBytes={10485760}
+                                inputContent="Перемести сюда файлы"
+                                styles={{
+                                    dropzone: { width: 'calc(100% - 42px)', 
+                                                height: 220,
+                                                marginTop: '45px', 
+                                                padding: '20px',
+                                                overflow: 'auto',
+                                                border: '1px dashed rgba(22, 45, 89, 0.3)',
+                                                borderRadius: 0, 
+                                                backgroundColor: '#F2F2F2',
+                                                boxShadow: '0 0 0 20px #FFFFFF, 0 0 0 21px rgba(22, 45, 89, 50%)',
+                                                boxSizing: 'border-box',
+                                            },
+                                    dropzoneActive: { borderColor: 'green' },
+                                }}       
                             />
-                            <p>до 10мб / jpg,png,pdf</p>
                         </div>
                         <button type="submit" className="btn btn-navy">
                             {state.request.sending ? <Spinner /> : 'ОТПРАВИТЬ'}
