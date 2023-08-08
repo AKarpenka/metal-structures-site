@@ -33,8 +33,7 @@ export default function Gallery() {
                 </div>
                 <div className="padding-container">
                     <p>
-                        Представляем Вам портфолио с некоторыми нашими работами и их примерными
-                        ценами.
+                        Представляем Вам портфолио с некоторыми нашими работами и их ценами.
                     </p>
                     <div className="gallery-menu">
                         <table>

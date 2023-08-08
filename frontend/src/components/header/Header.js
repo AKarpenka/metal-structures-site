@@ -38,14 +38,14 @@ export default function Header() {
                             <p className="font-s-18 text-right mb-0">+375 (29) 154-24-63</p>
                             <p className="font-s-18 text-right mb-0">+375 (25) 154-24-63</p>
                         </div>
-                        <p className="font-s-12 text-right mb-0">Ежедневно с 8:00 до 20:00</p>
+                        <p className="font-s-12 text-right mb-0">ежедневно с 8:00 до 20:00</p>
                     </div>
                     <div className="d-flex align-items-center justify-content-between margin-top-10">
                         <div className="d-flex align-items-center width-45 font-s-18">
                             <img src={Logo} alt="img" />
                             <span className='title'>МЕТАЛЛОКОНСТРУКЦИИ В ГОМЕЛЕ</span>
                         </div>
-                        <div className="width-55 font-s-14">
+                        <div className="width-55 font-s-16">
                             <nav className="d-flex align-items-center justify-content-between">
                                 <span
                                     className={`menu${
@@ -55,7 +55,7 @@ export default function Header() {
                                     }`}
                                     onClick={() => history.push('/main')}
                                 >
-                                    Главная
+                                    главная
                                 </span>
                                 <span
                                     className={`menu${
@@ -65,7 +65,7 @@ export default function Header() {
                                     }`}
                                     onClick={() => history.push('/portfolio/FENCE')}
                                 >
-                                    Продукция
+                                    продукция
                                 </span>
                                 <span
                                     className={`menu${
@@ -75,7 +75,7 @@ export default function Header() {
                                     }`}
                                     onClick={() => history.push('/about-us')}
                                 >
-                                    О нас
+                                    о нас
                                 </span>
                                 {/* <span className="menu">Калькулятор стоимости</span> */}
                                 <span
@@ -86,7 +86,7 @@ export default function Header() {
                                     }`}
                                     onClick={() => history.push('/contacts')}
                                 >
-                                    Контакты
+                                    контакты
                                 </span>
                                 <div>
                                     <button
