@@ -59,9 +59,10 @@
    
 
     .errorText {
-        color: #b40000;
+        color: #980000;
         font-family: Gotham SS Medium;
-        margin: 0;
+        margin: 5px;
+        box-sizing:border-box;
     }
 
     label {
