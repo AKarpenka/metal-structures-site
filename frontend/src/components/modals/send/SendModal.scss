@@ -7,9 +7,10 @@
 .send-modal-window {
     position: fixed;
     max-width: 600px;
+    height: 600px;
     background-color: $grey-color;
     color: $navy-color;
-    padding: 50px 40px;
+    padding: 50px 18px;
     z-index: 2;
     top: 50%;
     left: 50%;
@@ -22,73 +23,89 @@
     }
     .text-modal {
         font-family: Gotham SS Light;
+        padding-bottom: 10px;
     }
+
+    .text-center {
+        overflow-x: auto;
+        height: 100%;
+        padding: 0 20px;
+    }
+
     .fields {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        grid-column-gap: 10px;
-        grid-row-gap: 10px;
-        
+ 
         .field {
-            grid-row-start: 1;
-            grid-row-end: 3;
-            grid-column-start: 2;
+            margin-bottom: 25px;
         }
 
-        input, textarea {
+        .errorText {
+            color: red;
+            text-align: start;
+            margin: 0 0 0 12px;
+        }
+
+
+        .input {
+            position: relative;
             font-family: Gotham SS Light;
             width: 100%;
-            height: 100%;      
-            padding: 15px;
             border: 1px solid rgba($color: $navy-color, $alpha: 0.5);
             color: $navy-color;
             text-align: start;
             resize: none;
-            &:focus {
-                outline: none;
-            }
-        }
-
-        input::placeholder, textarea::placeholder {
-            font-family: Gotham SS Light;
-            color: $navy-color;
             font-size: 14px;
-        }
-    }
-    .upload-button {
-        text-align: initial;
-        input {
-            font-family: Gotham SS Light;
-            font-size: 12px;
-            height: 100%;      
-            padding-top: 10px;
-            color: rgba($color: $black-color, $alpha: 0.5);
-            text-align: start;
-            resize: none;
-            &:focus {
+
+            textarea {
+                resize: none;
+            }
+            
+            &__label {
+                position: absolute;
+                left: 0;
+                top: 0;
+                padding: calc(15px * 0.75) 15px;
+                margin: calc(5px * 0.75) 0;
+                transform: translate(0, 0);
+                transform-origin: 0 0;
+                transition: transform 120ms ease-in;
+            }
+
+            &__field {
+                box-sizing: border-box;
+                display: block;
+                width: 100%;
+                height: 100%;
+                padding: 15px;
+                border: none;
                 outline: none;
+                color: $navy-color;
+            
+                &:focus,
+                &:not(:placeholder-shown) {
+                    & + .input__label {
+                    transform: translate(0, -70%) scale(.8);
+                    outline: none;
+                    font-size: 18px;
+                    font-family: Gotham SS Medium;
+                    }
+                }
             }
         }
-        p {
-            font-family: Gotham SS Light;
-            font-size: 12px;
-            color: rgba($color: $black-color, $alpha: 0.5);
-            margin: 0;
-        }
     }
+    
     .btn {
         font-family: Gotham SS Medium;
         font-size: 14px;
         width: 100%;
-        margin-top: 10px;
         padding: 10px 0px;
         &:hover {
             color: $white-color;
             text-decoration: none;
         }
+        
     }
     .btn-navy {
+        margin-top: 45px;
         color: $white-color;
         background-color: $navy-color;
         border-color: $navy-color;
@@ -107,5 +124,41 @@
     }
 }
 
+.title-dnd {
+    text-align: center;
+    font-size: 14px;
+    font-family: Gotham SS Light;
+    color: $navy-color;
 
+    p {
+        margin: 0;
+    }
 
+    .icon {
+        margin-bottom: 10px;
+        font-size: 34px;
+        color: $azure-color;
+    }
+
+    &-or {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 0 15px 0;
+        color: rgba($navy-color, 0.6);
+
+        .line {
+            border-top: 1px rgba($navy-color, 0.4) solid;
+            width: 50px;
+            margin: 0 5px;
+        }
+    }
+}
+
+.btn-files {
+    color: $white-color;
+    background-color: $azure-color;
+    border-color: $azure-color;
+    font-family: Gotham SS Light !important;
+    padding: 7px 15px!important;
+}
