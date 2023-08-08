@@ -29,11 +29,13 @@
         right: 17px;
         .btn {
             font-family: Gotham SS Medium;
-            font-size: 12px;
+            font-size: 14px;
             padding: 4px 23px;
             &:hover {
                 color: $white-color;
                 text-decoration: none;
+                padding: 8px 30px;
+                transition: all .15s ease-out;
             }
         }
         .btn-navy {

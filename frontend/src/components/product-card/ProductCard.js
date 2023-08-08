@@ -6,7 +6,7 @@ export default function ProductCard(props) {
 
     return (
         <div className="product-card">
-            <div className="product-card-header font-s-14 ml-3 mb-2">{props.name}</div>
+            <div className="product-card-header font-s-16 ml-3 mb-2">{props.name}</div>
             <img src={props.image} alt="img" />
             <div className="button-position">
                 <Link to={`/portfolio/${props.link}`}>
