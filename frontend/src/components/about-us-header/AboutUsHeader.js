@@ -1,9 +1,9 @@
 import React from 'react';
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import './AboutUsHeader.scss';
 
 export default function AboutUsHeader() {
-    const history = useHistory();
+    const navigate = useNavigate();
     return (
         <div className="about-us-header-rect">
             <div className="max-width text-center">
@@ -25,7 +25,7 @@ export default function AboutUsHeader() {
                         <p className="margin-top-20">
                             <span
                                 className="dashed-border-white font-s-16"
-                                onClick={() => history.push('/about-us')}
+                                onClick={() => navigate('/about-us')}
                             >
                                 ПОДРОБНЕЕ О НАС
                                 <i className="fa fa-chevron-right" aria-hidden="true" />

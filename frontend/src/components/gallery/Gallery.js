@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import GridGallery from '../grid-gallery/GridGallery';
 import IMAGES from '../../constants/imagesStore';
@@ -7,15 +7,15 @@ import './Gallery.scss';
 
 export default function Gallery() {
     const [typeOfCategory, setTypeOfCategory] = useState('');
-    const history = useHistory();
+    const navigate = useNavigate();
     const location = useLocation();
 
     useEffect(() => {
         if (typeOfCategory === '') {
             setTypeOfCategory(location.pathname.split('/')[2]);
-            history.push(`/portfolio/${location.pathname.split('/')[2]}`);
+            navigate(`/portfolio/${location.pathname.split('/')[2]}`);
         } else {
-            history.push(`/portfolio/${typeOfCategory}`);
+            navigate(`/portfolio/${typeOfCategory}`);
         }
     }, [typeOfCategory]);
 
