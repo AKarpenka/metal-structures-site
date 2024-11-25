@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import ProductCard from '../product-card/ProductCard';
 import FenceIcon from '../../assets/images/production/fence.jpg';
 import GateIcon from '../../assets/images/production/gate.jpg';
@@ -15,7 +15,7 @@ import FramesIcon from '../../assets/images/production/frames.jpg';
 import './Production.scss';
 
 export default function Production() {
-    const history = useHistory();
+    const navigate = useNavigate();
 
     return (
         <div className="production-rect">
@@ -45,7 +45,7 @@ export default function Production() {
                 <p className="text-right mt-3">
                     <span
                         className="dashed-border-navy font-s-14"
-                        onClick={() => history.push('/portfolio/FENCE')}
+                        onClick={() => navigate('/portfolio/FENCE')}
                     >
                         СМОТРЕТЬ ВСЮ ПРОДУКЦИЮ
                         <i className="fa fa-chevron-right" aria-hidden="true" />

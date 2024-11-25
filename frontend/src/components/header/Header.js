@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { showCallModal } from '../../redux/modalSlice';
 import Logo from '../../assets/images/LOGO2.png';
@@ -7,7 +7,7 @@ import './Header.scss';
 
 export default function Header() {
     const [isScrolled, setScrolled] = useState(false)
-    const history = useHistory();
+    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -53,7 +53,7 @@ export default function Header() {
                                             ? `${' '}selected`
                                             : ''
                                     }`}
-                                    onClick={() => history.push('/main')}
+                                    onClick={() => navigate('/main')}
                                 >
                                     главная
                                 </span>
@@ -63,7 +63,7 @@ export default function Header() {
                                             ? ' selected'
                                             : ''
                                     }`}
-                                    onClick={() => history.push('/portfolio/FENCE')}
+                                    onClick={() => navigate('/portfolio/FENCE')}
                                 >
                                     продукция
                                 </span>
@@ -73,7 +73,7 @@ export default function Header() {
                                             ? `${' '}selected`
                                             : ''
                                     }`}
-                                    onClick={() => history.push('/about-us')}
+                                    onClick={() => navigate('/about-us')}
                                 >
                                     о нас
                                 </span>
@@ -84,7 +84,7 @@ export default function Header() {
                                             ? `${' '}selected`
                                             : ''
                                     }`}
-                                    onClick={() => history.push('/contacts')}
+                                    onClick={() => navigate('/contacts')}
                                 >
                                     контакты
                                 </span>
