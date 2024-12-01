@@ -1,12 +1,8 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { showSendModal } from '../../redux/modalSlice';
 import Drawing from '../../assets/images/chertez.png';
 import './SendUs.scss';
 
 export default function SendUs() {
-    const dispatch = useDispatch();
-
     return (
         <div className="send-us-rect">
             <div className="max-width-1090">
@@ -21,7 +17,7 @@ export default function SendUs() {
                         <button
                             type="button"
                             className="btn btn-primary"
-                            onClick={() => dispatch(showSendModal())}
+                            data-modal="send-modal"
                         >
                             ОТПРАВИТЬ ЧЕРТЁЖ
                         </button>

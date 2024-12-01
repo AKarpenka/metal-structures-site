@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { showCallModal } from '../../redux/modalSlice';
 import Logo from '../../assets/images/LOGO2.png';
 import './Header.scss';
 
 export default function Header() {
     const [isScrolled, setScrolled] = useState(false)
     const navigate = useNavigate();
-    const dispatch = useDispatch();
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
@@ -92,7 +89,7 @@ export default function Header() {
                                     <button
                                         type="button"
                                         className="btn btn-primary"
-                                        onClick={() => dispatch(showCallModal())}
+                                        data-modal="call-modal"
                                     >
                                         ЗАКАЗАТЬ ЗВОНОК
                                     </button>
