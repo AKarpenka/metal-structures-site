@@ -90,7 +90,7 @@ export default function Header() {
                                     <button
                                         type="button"
                                         className="btn btn-primary"
-                                        data-modal="call-modal"
+                                        // data-modal="call-modal"
                                     >
                                         ЗАКАЗАТЬ ЗВОНОК
                                     </button>

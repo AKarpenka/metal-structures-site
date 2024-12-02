@@ -17,7 +17,7 @@ export default function SendUs() {
                         <button
                             type="button"
                             className="btn btn-primary"
-                            data-modal="send-modal"
+                            // data-modal="send-modal"
                         >
                             ОТПРАВИТЬ ЧЕРТЁЖ
                         </button>
