@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { sendDesign } from '../../../redux/requestSlice';
-import { hideSendModal } from '../../../redux/modalSlice';
+import api from '../../../api/mails'
 import Spinner from '../../spinner/Spinner';
 import './SendModal.scss';
 import Dropzone from 'react-dropzone-uploader';
@@ -10,9 +8,10 @@ import { getDroppedOrSelectedFiles } from 'html5-file-selector';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFolderOpen } from "@fortawesome/free-regular-svg-icons";
 import InputMask from 'react-input-mask';
+import Modal from '../Modal';
 
 
-export default function SendModal() {
+export default function SendModal({ closeFn = () => null, open = false }) {
 
     const [userName, setUsername] = useState('');
     const [userNameDirty, setUserNameDirty] = useState(false);
@@ -21,10 +20,8 @@ export default function SendModal() {
     const [telephoneDirty, setTelephoneDirty] = useState(false);
     const [message, setMessage] = useState('');
     const [formValid, setFormValid] = useState(false);
-
     const [files, setFile] = useState([]);
-    const state = useSelector((state) => state);
-    const dispatch = useDispatch();
+    const [loading, setLoading] = useState(false);
     
     useEffect(() => {
         if (userNameError || telephoneDirty) {
@@ -70,10 +67,23 @@ export default function SendModal() {
         setMessage(event.target.value);
     };
 
-    const handleSubmit = event => {
+    const handleSubmit = async event => {
         event && event.preventDefault();
         if (!!userName && !!telephone && !!files) {
-            dispatch(sendDesign({ userName, telephone, message, files }));
+            try {
+                setLoading(true);
+                const formData = new FormData();
+                formData.append('username', userName);
+                formData.append('telephone', telephone);
+                formData.append('message', message);
+                formData.append('file', files);
+                await api.sendDesign(formData);
+                closeFn();
+            } catch (error) {
+                console.log(error.response)
+            } finally {
+                setLoading(false);
+            }
         }
     };
 
@@ -132,102 +142,104 @@ export default function SendModal() {
     }
 
     return (
-        <div className="send-modal-window">
-            <div>
-                <i className="fa fa-times" aria-hidden="true" onClick={() =>  dispatch(hideSendModal())} />
-            </div>
-            <div className="text-center">
-                <h3 className="header-modal font-s-18">ОТПРАВИТЬ ЧЕРТЕЖ НА РАСЧЕТ</h3>
-                <p className="text-modal font-s-14">
-                    Введите свои данные и мы перезвоним для уточнения деталей:
-                </p>
-                <form onSubmit={handleSubmit}>
-                    <fieldset disabled={state.request.sending}>
-                        <div className="fields">
-                            <div className="field">
-                                <label className="input">
-                                    <input
-                                        className="input__field"
-                                        type="text"
-                                        placeholder=" "
-                                        value={userName}
-                                        onChange={handleUsernameChange}
-                                        name = "userName"
-                                        onBlur={blurHandler}
-                                        required
-                                    />
-                                    <span className="input__label">Ваше имя *</span>
-                                </label>
-                                {(userNameDirty && userNameError) && <p className="errorText"> {userNameError}</p>}
-                            </div>
-
-                            <div className="field">
-                                <label className="input">
-                                    <InputMask 
-                                            mask="+375\(99)-999-99-99"   
-                                            maskChar="_" 
+        <Modal open={open}>
+            <div className='overlay' />
+            <div className="send-modal-window">
+                <div>
+                    <i className="fa fa-times" aria-hidden="true" onClick={closeFn} />
+                </div>
+                <div className="text-center">
+                    <h3 className="header-modal font-s-18">ОТПРАВИТЬ ЧЕРТЕЖ НА РАСЧЕТ</h3>
+                    <p className="text-modal font-s-14">
+                        Введите свои данные и мы перезвоним для уточнения деталей:
+                    </p>
+                    <form onSubmit={handleSubmit}>
+                        <fieldset disabled={loading}>
+                            <div className="fields">
+                                <div className="field">
+                                    <label className="input">
+                                        <input
                                             className="input__field"
                                             type="text"
                                             placeholder=" "
-                                            value={telephone}
-                                            onChange={handleTelephoneChange}
-                                            name = "telephone"
+                                            value={userName}
+                                            onChange={handleUsernameChange}
+                                            name = "userName"
                                             onBlur={blurHandler}
                                             required
-                                    />
-                                    <span className="input__label">Ваш телефон *</span>
-                                </label>
-                                {(telephoneDirty) && <p className="errorText">Заполните, пожалуйста, обязательное поле</p>}
-                            </div>
+                                        />
+                                        <span className="input__label">Ваше имя *</span>
+                                    </label>
+                                    {(userNameDirty && userNameError) && <p className="errorText"> {userNameError}</p>}
+                                </div>
 
                                 <div className="field">
                                     <label className="input">
-                                        <textarea
-                                            className="input__field"
-                                            placeholder=" "
-                                            value={message}
-                                            onChange={handleMessageChange}
+                                        <InputMask 
+                                                mask="+375\(99)-999-99-99"   
+                                                maskChar="_" 
+                                                className="input__field"
+                                                type="text"
+                                                placeholder=" "
+                                                value={telephone}
+                                                onChange={handleTelephoneChange}
+                                                name = "telephone"
+                                                onBlur={blurHandler}
+                                                required
                                         />
-                                        <span className="input__label">Ваше сообщение</span>
+                                        <span className="input__label">Ваш телефон *</span>
                                     </label>
+                                    {(telephoneDirty) && <p className="errorText">Заполните, пожалуйста, обязательное поле</p>}
                                 </div>
-                            
-                        </div>
-                        <div className="upload-button">
-                            <Dropzone
-                                onChangeStatus={onFileChange}
-                                InputComponent={selectFileInput}
-                                getFilesFromEvent={getFilesFromEvent}
-                                accept="image/*,application/*"
-                                maxFiles={5}
-                                maxSizeBytes={10485760}
-                                inputContent="Перемести сюда файлы"
-                                styles={{
-                                    dropzone: { width: 'calc(100% - 42px)', 
-                                                height: 220,
-                                                marginTop: '45px', 
-                                                padding: '20px',
-                                                overflow: 'auto',
-                                                border: '1px dashed rgba(22, 45, 89, 0.3)',
-                                                borderRadius: 0, 
-                                                backgroundColor: '#F2F2F2',
-                                                boxShadow: '0 0 0 20px #FFFFFF, 0 0 0 21px rgba(22, 45, 89, 50%)',
-                                                boxSizing: 'border-box',
-                                            },
-                                    dropzoneActive: { borderColor: 'green' },
-                                }}       
-                            />
-                        </div>
-                        <button type="submit" disabled={!formValid} className="btn btn-navy">
-                            {state.request.sending ? <Spinner /> : 'ОТПРАВИТЬ'}
-                        </button>
-                        <p className="footer-modal font-s-12 text-center">
-                            Нажимая на кнопку, вы даете согласие на обработку своих персональных данных
-                        </p>
-                    </fieldset>
-                </form>
+
+                                    <div className="field">
+                                        <label className="input">
+                                            <textarea
+                                                className="input__field"
+                                                placeholder=" "
+                                                value={message}
+                                                onChange={handleMessageChange}
+                                            />
+                                            <span className="input__label">Ваше сообщение</span>
+                                        </label>
+                                    </div>
+                                
+                            </div>
+                            <div className="upload-button">
+                                <Dropzone
+                                    onChangeStatus={onFileChange}
+                                    InputComponent={selectFileInput}
+                                    getFilesFromEvent={getFilesFromEvent}
+                                    accept="image/*,application/*"
+                                    maxFiles={5}
+                                    maxSizeBytes={10485760}
+                                    inputContent="Перемести сюда файлы"
+                                    styles={{
+                                        dropzone: { width: 'calc(100% - 42px)', 
+                                                    height: 220,
+                                                    marginTop: '45px', 
+                                                    padding: '20px',
+                                                    overflow: 'auto',
+                                                    border: '1px dashed rgba(22, 45, 89, 0.3)',
+                                                    borderRadius: 0, 
+                                                    backgroundColor: '#F2F2F2',
+                                                    boxShadow: '0 0 0 20px #FFFFFF, 0 0 0 21px rgba(22, 45, 89, 50%)',
+                                                    boxSizing: 'border-box',
+                                                },
+                                        dropzoneActive: { borderColor: 'green' },
+                                    }}       
+                                />
+                            </div>
+                            <button type="submit" disabled={!formValid} className="btn btn-navy">
+                                {loading ? <Spinner /> : 'ОТПРАВИТЬ'}
+                            </button>
+                            <p className="footer-modal font-s-12 text-center">
+                                Нажимая на кнопку, вы даете согласие на обработку своих персональных данных
+                            </p>
+                        </fieldset>
+                    </form>
+                </div>
             </div>
-            
-        </div>
+        </Modal>
     );
 }
