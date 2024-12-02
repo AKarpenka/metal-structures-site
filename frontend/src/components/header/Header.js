@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Logo from '../../assets/images/LOGO2.png';
 import './Header.scss';
 
 export default function Header() {
     const [isScrolled, setScrolled] = useState(false)
     const navigate = useNavigate();
+    const location = useLocation();
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
@@ -26,7 +27,7 @@ export default function Header() {
         <div className="header-rect">
             <div
                 className={`header-sticky${
-                    isScrolled || window.location.pathname !== '/main' ? ' header-blackout' : ''
+                    isScrolled || location.pathname !== '/main' ? ' header-blackout' : ''
                 }`}
             >
                 <div className="max-width-1440">
@@ -46,7 +47,7 @@ export default function Header() {
                             <nav className="d-flex align-items-center justify-content-between">
                                 <span
                                     className={`menu${
-                                        window.location.pathname === '/main'
+                                        location.pathname === '/main'
                                             ? `${' '}selected`
                                             : ''
                                     }`}
@@ -56,7 +57,7 @@ export default function Header() {
                                 </span>
                                 <span
                                     className={`menu${
-                                        window.location.pathname.includes('/portfolio')
+                                        location.pathname.includes('/portfolio')
                                             ? ' selected'
                                             : ''
                                     }`}
@@ -66,7 +67,7 @@ export default function Header() {
                                 </span>
                                 <span
                                     className={`menu${
-                                        window.location.pathname === '/about-us'
+                                        location.pathname === '/about-us'
                                             ? `${' '}selected`
                                             : ''
                                     }`}
@@ -77,7 +78,7 @@ export default function Header() {
                                 {/* <span className="menu">Калькулятор стоимости</span> */}
                                 <span
                                     className={`menu${
-                                        window.location.pathname === '/contacts'
+                                        location.pathname === '/contacts'
                                             ? `${' '}selected`
                                             : ''
                                     }`}
