@@ -28,7 +28,7 @@ const App = () => {
     <>
       <UpArrow />
       <BrowserRouter>
-        <div onClick={openModal}>
+        {/* <div onClick={openModal}> */}
           <Routes>
             <Route path="*" element={<Navigate to="/main" replace />} />
             <Route path="/main" element={<Main />} />
@@ -36,7 +36,7 @@ const App = () => {
             <Route path="/portfolio/:category" element={<Portfolio />} />
             <Route path="/about-us" element={<AboutUs />} />
           </Routes>
-        </div>
+        {/* </div> */}
       </BrowserRouter>
       <ModalManager closeFn={closeModal} modal={modalOpen} />
     </>
