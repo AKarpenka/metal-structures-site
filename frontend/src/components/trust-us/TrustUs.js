@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import Carousel from 'react-multi-carousel';
 import Farmaciya from '../../assets/images/clients/farmaciya.png';
 import FavApteka from '../../assets/images/clients/fav_apteka.png';
@@ -8,6 +9,8 @@ import Sugar from '../../assets/images/clients/sugar.png';
 import './TrustUs.scss';
 
 export default function TrustUs() {
+    const location = useLocation();
+
     const images = [Farmaciya, FavApteka, PolyVet, SelHoz, Sugar];
     const responsive = {
         superLargeDesktop: {
@@ -50,7 +53,7 @@ export default function TrustUs() {
     return (
         <div
             className={`trust-us-rect${
-                window.location.pathname === '/main'
+                location.pathname === '/main'
                     ? `${' '}background-white`
                     : `${' '}background-grey`
             }`}
@@ -58,7 +61,7 @@ export default function TrustUs() {
             <div className="max-width-1090">
                 <div
                     className={
-                        window.location.pathname === '/main'
+                        location.pathname === '/main'
                             ? 'corner-header-left'
                             : 'corner-header-right'
                     }

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { askForRecalling } from '../../redux/requestSlice';
+import api from '../../api/mails';
 import './ContactUs.scss';
 import InputMask from 'react-input-mask';
 
@@ -14,7 +13,6 @@ export default function ContactUs() {
     const [message, setMessage] = useState('');
     const [formValid, setFormValid] = useState(false);
 
-    const dispatch = useDispatch();
   
     useEffect(() => {
         if (userNameError || telephoneDirty) {
@@ -64,7 +62,7 @@ export default function ContactUs() {
     const handleSubmit = event => {
         event && event.preventDefault();
         if (!!userName && !!telephone) {
-            dispatch(sendDesign({ userName, telephone, message }));
+            api.sendDesign({ userName, telephone, message });
         }
     };
 
