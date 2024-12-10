@@ -1,12 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Logo from '../../assets/images/LOGO2.png';
+import { 
+    NUMBER_1, 
+    NUMBER_2, 
+    WORKING_TIME, 
+    TITLE,
+    NAV_MAIN,
+    NAV_PORTFOLIO,
+    NAV_ABOUT,
+    NAV_CONTACTS
+ } from './constants';
+
 import './Header.scss';
 
 export default function Header() {
     const [isScrolled, setScrolled] = useState(false)
     const navigate = useNavigate();
-    const location = useLocation();
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
@@ -33,17 +43,17 @@ export default function Header() {
                 <div className="max-width-1440">
                     <div>
                         <div className='numbers'>
-                            <p className="font-s-18 text-right mb-0">+375 (29) 154-24-63</p>
-                            <p className="font-s-18 text-right mb-0">+375 (25) 154-24-63</p>
+                            <p className="font-s-18 text-right mb-0">{NUMBER_1}</p>
+                            <p className="font-s-18 text-right mb-0">{NUMBER_2}</p>
                         </div>
-                        <p className="font-s-12 text-right mb-0">ежедневно с 8:00 до 20:00</p>
+                        <p className="font-s-12 text-right mb-0">{WORKING_TIME}</p>
                     </div>
                     <div className="d-flex align-items-center justify-content-between margin-top-10">
                         <div className="d-flex align-items-center width-45 font-s-18">
                             <img src={Logo} alt="img" />
-                            <span className='title'>МЕТАЛЛОКОНСТРУКЦИИ В ГОМЕЛЕ</span>
+                            <span className='title'>{TITLE}</span>
                         </div>
-                        <div className="width-55 font-s-16">
+                        <div className="font-s-16">
                             <nav className="d-flex align-items-center justify-content-between">
                                 <span
                                     className={`menu${
@@ -53,7 +63,7 @@ export default function Header() {
                                     }`}
                                     onClick={() => navigate('/main')}
                                 >
-                                    главная
+                                    {NAV_MAIN}
                                 </span>
                                 <span
                                     className={`menu${
@@ -63,7 +73,7 @@ export default function Header() {
                                     }`}
                                     onClick={() => navigate('/portfolio/FENCE')}
                                 >
-                                    продукция
+                                    {NAV_PORTFOLIO}
                                 </span>
                                 <span
                                     className={`menu${
@@ -73,28 +83,18 @@ export default function Header() {
                                     }`}
                                     onClick={() => navigate('/about-us')}
                                 >
-                                    о нас
+                                    {NAV_ABOUT}
                                 </span>
-                                {/* <span className="menu">Калькулятор стоимости</span> */}
                                 <span
-                                    className={`menu${
-                                        location.pathname === '/contacts'
-                                            ? `${' '}selected`
+                                    className={`menu ${
+                                        window.location.pathname === '/contacts'
+                                            ? `selected`
                                             : ''
                                     }`}
                                     onClick={() => navigate('/contacts')}
                                 >
-                                    контакты
+                                    {NAV_CONTACTS}
                                 </span>
-                                <div>
-                                    <button
-                                        type="button"
-                                        className="btn btn-primary"
-                                        // data-modal="call-modal"
-                                    >
-                                        ЗАКАЗАТЬ ЗВОНОК
-                                    </button>
-                                </div>
                             </nav>
                         </div>
                     </div>

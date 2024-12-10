@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import api from '../../../api/mails'
+// import api from '../../../api/mails'
 import Spinner from '../../spinner/Spinner';
 import './SendModal.scss';
 import Dropzone from 'react-dropzone-uploader';
@@ -77,7 +77,7 @@ export default function SendModal({ closeFn = () => null, open = false }) {
                 formData.append('telephone', telephone);
                 formData.append('message', message);
                 formData.append('file', files);
-                await api.sendDesign(formData);
+                // await api.sendDesign(formData);
                 closeFn();
             } catch (error) {
                 console.log(error.response)

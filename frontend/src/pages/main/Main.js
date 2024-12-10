@@ -5,8 +5,6 @@ import Production from '../../components/production/Production';
 import HowWeWork from '../../components/how-we-work/HowWeWork';
 import WhyWe from '../../components/why-we/WhyWe';
 import TrustUs from '../../components/trust-us/TrustUs';
-import SendUs from '../../components/send-us/SendUs';
-import ContactUs from '../../components/contact-us/ContactUs';
 import Footer from '../../components/footer/Footer';
 import './Main.scss';
 
@@ -26,9 +24,7 @@ export default function Main() {
             <HowWeWork />
             <WhyWe />
             <TrustUs />
-            <SendUs />
-            <ContactUs />
-            <Footer />            
+            <Footer />
         </>
     );
 }

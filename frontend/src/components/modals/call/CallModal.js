@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import InputMask from 'react-input-mask';
-import api from '../../../api/mails'
+// import api from '../../../api/mails'
 import Spinner from '../../spinner/Spinner';
 import Modal from '../Modal';
 import './CallModal.scss';
@@ -63,7 +63,7 @@ export default function CallModal({ closeFn = () => null, open = false }) {
         if (!!userName && !!telephone) {
             try {
                 setLoading(true);
-                await api.callMe({ userName, telephone, message});
+                // await api.callMe({ userName, telephone, message});
                 closeFn();
             } catch (error) {
                 console.log(error.response)
