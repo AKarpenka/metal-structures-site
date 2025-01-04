@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
-import GridGallery from '../grid-gallery/GridGallery';
+import GridGallery from './grid-gallery/GridGallery';
 import IMAGES from '../../constants/imagesStore';
 import './Gallery.scss';
 
@@ -19,8 +19,7 @@ export default function Gallery() {
         }
     }, [typeOfCategory]);
 
-
-    const photos = IMAGES.filter(photo => photo.category === typeOfCategory);
+    const images = IMAGES.filter(photo => photo.category === typeOfCategory);
 
     return (
         <div className="gallery-rect">
@@ -112,8 +111,8 @@ export default function Gallery() {
                         </table>
                         <div className="pictures">
                             <p className="pic-title">Заборы</p>
-                            <p className="pic-subtitle">{photos.length} фото</p>
-                            <GridGallery photos={photos} />
+                            <p className="pic-subtitle">{images.length} фото</p>
+                            <GridGallery images={images}/>
                         </div>
                     </div>
                 </div>

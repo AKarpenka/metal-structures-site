@@ -1,0 +1,46 @@
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 10px;
+    align-items: center;
+}
+
+.image-info {
+    display: flex;
+    align-content: center;
+    gap: 10px;
+
+    //ToDo: Выпилить бутстрап и убрать это 
+    p {
+        margin-top: auto !important;
+        margin-bottom: auto !important;
+    }
+
+    .toolbar-wrapper {
+        padding: 0px 24px;
+        color: #fff;
+        font-size: 20px;
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 100px;
+    
+        .anticon {
+            padding: 12px;
+            cursor: pointer;
+    
+            &[disabled] {
+                cursor: not-allowed;
+                opacity: 0.3;
+            }
+    
+            &:hover {
+                opacity: 0.3;
+            }
+        }
+    }
+}
+
+.ant-image-preview-img-wrapper {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+  

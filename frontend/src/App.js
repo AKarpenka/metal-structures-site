@@ -10,15 +10,15 @@ import ModalManager from "./components/modals/ModalManager";
 const App = () => {
   const [modalOpen, setModal] = useState(false);
 
-  const openModal = (event) => {
-    event.preventDefault();
-    const {
-      target: {
-        dataset: { modal },
-      },
-    } = event;
-    if (modal) setModal(modal);
-  };
+  // const openModal = (event) => {
+  //   event.preventDefault();
+  //   const {
+  //     target: {
+  //       dataset: { modal },
+  //     },
+  //   } = event;
+  //   if (modal) setModal(modal);
+  // };
 
   const closeModal = () => {
     setModal("");
