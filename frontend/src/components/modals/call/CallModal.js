@@ -28,14 +28,17 @@ export default function CallModal({ closeFn = () => null, open = false }) {
             case 'userName':
                 setUserNameDirty(true);
                 break;
-            case 'telephone':
+            case 'telephone': {
                 let val = e.target.value.split('');
+
                 if (val.length == 0) {
                     setTelephoneDirty(true)
                 } else {
                     val.some(el => el == '_') ? setTelephoneDirty(true) : setTelephoneDirty(false);
                 }
+
                 break;
+            }
         }
     }
 
@@ -43,7 +46,7 @@ export default function CallModal({ closeFn = () => null, open = false }) {
         setUsername(event.target.value);
         if (event.target.value == '') {
             setUserNameError('Заполните, пожалуйста, обязательное поле');
-        } else if (!/^[a-zA-ZЁёА-я\-]+$/.test(event.target.value)) {
+        } else if (!/^[a-zA-ZЁёА-я/-]+$/.test(event.target.value)) {
             setUserNameError('Имя некорректно');
         } else {
             setUserNameError('');

@@ -25,7 +25,7 @@ export default function Header() {
         };
     }, []);
 
-    const handleScroll = e => {
+    const handleScroll = () => {
         if (window.scrollY === 0) {
             setScrolled(false);
         } else if (window.scrollY > 0) {
