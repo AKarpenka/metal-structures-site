@@ -1,6 +1,5 @@
 export const NUMBER_1 = '+375 (29) 154-24-63';
 export const NUMBER_2 = '+375 (25) 154-24-63';
-export const WORKING_TIME = 'ежедневно с 8:00 до 20:00';
 
 export const TITLE = 'МЕТАЛЛОКОНСТРУКЦИИ В ГОМЕЛЕ';
 

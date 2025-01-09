@@ -6,12 +6,14 @@
 .gallery-rect {
     font-family: Gotham SS Medium;
     background-color: $white-color;
+
     .max-width-1090 {
         position: relative;
         max-width: 1090px;
         margin: auto;
         padding: 170px 15px 60px 15px;
     }
+
     .corner-header {
         position: relative;
         margin-bottom: 50px;
@@ -76,6 +78,8 @@
             border: 0.5px solid rgba($navy-color, 0.1);
             width: 100%;
             padding: 10px;
+            height: 550px;
+            overflow-y: auto;
 
             p {
                 margin: 0;
@@ -93,9 +97,36 @@
                 font-family: Gotham SS Light;
                 margin-bottom: 15px;
             }
+
+            .pic-more-about {
+                margin-bottom: 10px;
+                font-size: 14px;
+                font-family: Gotham SS Light;
+                color: $navy-color;
+                text-align: center;
+            }
         }
-
-        
-
     }
+
+    .about-container {
+        position: relative;
+
+        #about-anchor {
+            top: -120px;
+            position: absolute;
+        }
+    
+        .about-category {
+            padding: 15px;
+            color: $navy-color;
+            font-family: Gotham SS Light;
+            font-size: 16px;
+            cursor: default;
+            white-space: pre-line
+        }
+    }
+}
+
+.ant-image-preview-progress {
+    margin-bottom: 0;
 }

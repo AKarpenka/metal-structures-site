@@ -3,8 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Logo from '../../assets/images/LOGO2.png';
 import { 
     NUMBER_1, 
-    NUMBER_2, 
-    WORKING_TIME, 
+    NUMBER_2,
     TITLE,
     NAV_MAIN,
     NAV_PORTFOLIO,
@@ -46,7 +45,6 @@ export default function Header() {
                             <p className="font-s-18 text-right mb-0">{NUMBER_1}</p>
                             <p className="font-s-18 text-right mb-0">{NUMBER_2}</p>
                         </div>
-                        <p className="font-s-12 text-right mb-0">{WORKING_TIME}</p>
                     </div>
                     <div className="d-flex align-items-center justify-content-between margin-top-10">
                         <div className="d-flex align-items-center width-45 font-s-18">
