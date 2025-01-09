@@ -19,61 +19,73 @@ export const CATEGORIES = {
         rusName: 'Заборы',
         engName: 'FENCE',
         about: <FenceAbout/>,
+        image: require('../assets/images/production/fence.jpg'),
     },
     GATE: {
         rusName: 'Ворота и калитки',
         engName: 'GATE',
-        about: <GateAbout/>
+        about: <GateAbout/>,
+        image: require('../assets/images/production/gate.jpg'),
     },
     RAILINGS: {
         rusName: 'Перила',
         engName: 'RAILINGS',
         about: <RailingsAbout/>,
+        image: require('../assets/images/production/railings.jpg'),
     },
     GRILLES: {
         rusName: 'Решетки',
         engName: 'GRILLES',
         about: <GrillesAbout/>,
+        image: require('../assets/images/production/lattices.jpg'),
     },
     GREENHOUSES: {
         rusName: 'Теплицы',
         engName: 'GREENHOUSES',
         about: <GreenhousesAbout/>,
+        image: require('../assets/images/production/greenhouses.jpg'),
     },
     VISOR: {
         rusName: 'Козырьки',
         engName: 'VISOR',
         about: <VisorAbout/>,
+        image: require('../assets/images/production/visor.jpg'),
     },
     CANOPIES: {
         rusName: 'Навесы',
         engName: 'CANOPIES',
         about: <CanopiesAbout/>,
+        image: require('../assets/images/production/awnings.jpg'),
     },
     STAIRS: {
         rusName: 'Лестницы',
         engName: 'STAIRS',
         about: <StairsAbout/>,
+        image: require('../assets/images/production/stairs.jpg'),
     },
     SHELVES: {
         rusName: 'Стеллажи',
         engName: 'SHELVES',
         about: <ShelvesAbout/>,
+        image: require('../assets/images/production/racks.jpg'),
     },
     BILLBOARDS: {
         rusName: 'Рекламные билборды',
         engName: 'BILLBOARDS',
         about: <BillboardsAbout/>,
+        image: require('../assets/images/production/billboards.jpg'),
     },
     FRAMES: {
         rusName: 'Металлические каркасы',
         engName: 'FRAMES',
         about: <FramesAbout/>,
+        image: require('../assets/images/production/frames.jpg'),
     },
     OTHER: {
         rusName: 'Другое',
         engName: 'OTHER',
         about: <OtherAbout/>,
+        image: require('../assets/images/production/other.jpg'),
     },
 };
 

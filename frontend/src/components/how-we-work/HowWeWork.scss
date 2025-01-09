@@ -38,7 +38,6 @@
     .steps {
         display: flex;
         margin-top: 160px;
-        // width: 872px;
         justify-content: center;
     }
     img {
@@ -55,50 +54,77 @@
         margin: 0 10px;
     }
     .step {
-        width: 18px;
-        height: 18px;
+        width: 25px;
+        height: 25px;
         border-radius: 50%;
         background-color: $blue-color;
         color: $white-color;
         font-family: Gotham SS Medium;
-        padding-left: 5px;
-        font-size: 12px;
+        padding-left: 7px;
+        padding-top: 2px;
     }
     .right-block {
         position: relative;
-        top: -90px;
-        .pl-6px {
-            padding-left: 6px;
+        top: -24px;
+
+        .pl-9px {
+            padding-left: 9px;
+        }
+        
+        >div {
+            &:nth-child(1n) {
+                margin-bottom: 72px;
+            }
+
+            &:nth-child(2n) {
+                margin-bottom: 48px;
+            }
         }
     }
+
+    .left-block {
+        margin-top: 26px;
+
+        >div {
+            &:nth-child(1n) {
+                margin-bottom: 47px;
+            }
+
+            &:nth-child(2n) {
+                margin-bottom: 47px;
+            }
+        }
+    }
+
     .lines {
         display: flex;
-        height: 450px;
+
         .left-lines {
-            height: 180px;
-            width: 63px;
+            height: 120px;
+            width: 64px;
             border-top: 1px solid $baby-blue-color;
             border-right: 1px solid $baby-blue-color;
             border-bottom: 1px solid $baby-blue-color;
             position: relative;
             left: 1px;
-            top: 90px;
+            top: 60px;
+
+            &:nth-child(2n) {
+                border-top: none;
+            }
         }
+
         .right-lines {
-            height: 180px;
-            width: 63px;
+            height: 120px;
+            width: 64px;
             border-top: 1px solid $baby-blue-color;
             border-left: 1px solid $baby-blue-color;
             border-bottom: 1px solid $baby-blue-color;
             position: relative;
-        }
-        .left-lines:nth-child(2n) {
-            top: 89px;
-            height: 182px;
-        }
-        .right-lines:nth-child(2n) {
-            bottom: 1px;
-            height: 181px;
+
+            &:nth-child(2n) {
+                border-top: none;
+            }
         }
     }
 }
