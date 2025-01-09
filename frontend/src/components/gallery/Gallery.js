@@ -12,9 +12,10 @@ export default function Gallery() {
     const location = useLocation();
 
     const [typeOfCategory, setTypeOfCategory] = useState(location.pathname.split('/')[2]);
-    const images = IMAGES[typeOfCategory];
+    const [images, setImages] = useState(IMAGES[typeOfCategory]);
 
     useEffect(() => {
+        setImages(IMAGES[typeOfCategory]);
         navigate(`/portfolio/${typeOfCategory}`);
     }, [typeOfCategory]);
 
@@ -47,9 +48,11 @@ export default function Gallery() {
                         </table>
                         <div className="pictures">
                             <p className="pic-title">{CATEGORIES[typeOfCategory].rusName}</p>
-                            <p className="pic-more-about">
-                                <HashLink smooth to="#about-anchor">(Узнать больше)</HashLink>
-                            </p>
+                            {CATEGORIES[typeOfCategory].about &&
+                                <p className="pic-more-about">
+                                    <HashLink smooth to="#about-anchor">(Узнать больше)</HashLink>
+                                </p>
+                            }
                             <p className="pic-subtitle">{images.length} фото</p>
                             <GridGallery images={images}/>
                         </div>
@@ -58,7 +61,7 @@ export default function Gallery() {
 
                 <div className='about-container'>
                     <span id='about-anchor'></span>
-                    <p className='about-category'>{CATEGORIES[typeOfCategory].about}</p>
+                    <div className='about-category'>{CATEGORIES[typeOfCategory].about}</div>
                 </div>
                 
             </div>

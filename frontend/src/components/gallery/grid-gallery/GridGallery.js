@@ -21,9 +21,9 @@ export default function GridGallery({images}) {
                     {
                         transform: { scale },
                         actions: {
-                        onActive,
-                        onZoomOut,
-                        onZoomIn,
+                            onActive,
+                            onZoomOut,
+                            onZoomIn,
                         },
                     }
                     ) => (
@@ -43,7 +43,10 @@ export default function GridGallery({images}) {
                 }}
             >
                 {images.map((item) => (
-                        <Image key={item} src={item.src}/>
+                    <Image 
+                        key={item.src} 
+                        src={item.src}
+                    />
                 ))}
             </Image.PreviewGroup>
         </div>

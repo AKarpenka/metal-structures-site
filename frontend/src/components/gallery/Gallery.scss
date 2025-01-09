@@ -78,6 +78,8 @@
             border: 0.5px solid rgba($navy-color, 0.1);
             width: 100%;
             padding: 10px;
+            height: 550px;
+            overflow-y: auto;
 
             p {
                 margin: 0;
@@ -123,5 +125,8 @@
             white-space: pre-line
         }
     }
+}
 
+.ant-image-preview-progress {
+    margin-bottom: 0;
 }
