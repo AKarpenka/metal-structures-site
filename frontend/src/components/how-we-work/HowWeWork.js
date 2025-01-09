@@ -1,10 +1,4 @@
 import React from 'react';
-import HowWeWork1 from '../../assets/images/how-we-work/how_we_work1.png';
-import HowWeWork2 from '../../assets/images/how-we-work/how_we_work2.png';
-import HowWeWork3 from '../../assets/images/how-we-work/how_we_work3.png';
-import HowWeWork4 from '../../assets/images/how-we-work/how_we_work4.png';
-import HowWeWork5 from '../../assets/images/how-we-work/how_we_work5.png';
-import HowWeWork6 from '../../assets/images/how-we-work/how_we_work6.png';
 import './HowWeWork.scss';
 
 export default function HowWeWork() {
@@ -22,18 +16,15 @@ export default function HowWeWork() {
                 <div className="steps mx-auto">
                     <div className="left-block">
                         <div className="d-flex align-items-center">
-                            <img src={HowWeWork2} alt="img" />
                             <p>Мы уточняем детали и делаем замеры</p>
                             <div className="step">2</div>
                         </div>
                         <div className="d-flex align-items-center">
-                            <img src={HowWeWork4} alt="img" />
-                            <p>Утверждаем с Вами и заключаем договор</p>
+                            <p>Утверждаем и заключаем с Вами договор</p>
                             <div className="step">4</div>
                         </div>
                         <div className="d-flex align-items-center">
-                            <img src={HowWeWork6} alt="img" />
-                            <p>Приезжаем к Вам и устанавливаем</p>
+                            <p>Приезжаем к Вам и устанавливаем конструкцию</p>
                             <div className="step">6</div>
                         </div>
                     </div>
@@ -49,19 +40,16 @@ export default function HowWeWork() {
                     </div>
                     <div className="right-block">
                         <div className="d-flex align-items-center">
-                            <div className="step pl-6px">1</div>
-                            <p>Оставляете заявку на сайте или звоните нам</p>
-                            <img src={HowWeWork1} alt="img" />
+                            <div className="step pl-9px">1</div>
+                            <p>Вы звоните нам для консультации</p>
                         </div>
                         <div className="d-flex align-items-center">
                             <div className="step">3</div>
                             <p>Рассчитываем стоимость проека</p>
-                            <img src={HowWeWork3} alt="img" />
                         </div>
                         <div className="d-flex align-items-center">
                             <div className="step">5</div>
                             <p>Закупаем материалы и выполняем работу согласно проекту</p>
-                            <img src={HowWeWork5} alt="img" />
                         </div>
                     </div>
                 </div>
