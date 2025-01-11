@@ -5,22 +5,24 @@ import {
     NUMBER_1, 
     NUMBER_2,
     TITLE,
-    NAV_MAIN,
-    NAV_PORTFOLIO,
-    NAV_ABOUT,
-    NAV_CONTACTS
+    MENU_ITEMS,
  } from './constants';
-
+import { DownOutlined } from '@ant-design/icons';
+import { Dropdown, Space, Typography } from 'antd';
 import './Header.scss';
 
 export default function Header() {
-    const [isScrolled, setScrolled] = useState(false)
+    const [isScrolled, setScrolled] = useState(false);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 990);
+
     const navigate = useNavigate();
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
+        window.addEventListener('resize', handleResize);
         return () => {
             window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', handleResize);
         };
     }, []);
 
@@ -32,6 +34,49 @@ export default function Header() {
         }
     };
 
+    const handleResize = () => {
+        setIsMobile(window.innerWidth < 990);
+    };
+
+    const dropdownMenu = () => {
+        return (
+            <Dropdown
+                menu={{
+                    items: MENU_ITEMS,
+                    selectable: true,
+                    defaultSelectedKeys: ['3'],
+                    onClick: ({ key }) => {
+                        const selectedItem = MENU_ITEMS.find(item => item.key === key);
+                        if (selectedItem) {
+                            navigate(selectedItem.location);
+                        }
+                    },
+                }}
+            >
+                <Typography.Link>
+                    <Space>
+                        Меню
+                        <DownOutlined />
+                    </Space>
+                </Typography.Link>
+            </Dropdown>
+        );
+    };
+
+    const collapsedMenu = () => {
+        return MENU_ITEMS.map(({ key, location, name }) => (
+            <span
+                key={key}
+                className={`menu${
+                    location.pathname === location ? ' selected' : ''
+                }`}
+                onClick={() => navigate(location)}
+            >
+                {name}
+            </span>
+        ));
+    };
+
     return (
         <div className="header-rect">
             <div
@@ -40,12 +85,13 @@ export default function Header() {
                 }`}
             >
                 <div className="max-width-1440">
-                    <div>
-                        <div className='numbers'>
+                    {/* Номера телефонов скрыты на мобильных устройствах */}
+                    {!isMobile && (
+                        <div className="numbers">
                             <p className="font-s-18 text-right mb-0">{NUMBER_1}</p>
                             <p className="font-s-18 text-right mb-0">{NUMBER_2}</p>
                         </div>
-                    </div>
+                    )}
                     <div className="d-flex align-items-center justify-content-between margin-top-10">
                         <div className="d-flex align-items-center width-45 font-s-18">
                             <img src={Logo} alt="img" />
@@ -53,46 +99,7 @@ export default function Header() {
                         </div>
                         <div className="font-s-16">
                             <nav className="d-flex align-items-center justify-content-between">
-                                <span
-                                    className={`menu${
-                                        location.pathname === '/main'
-                                            ? `${' '}selected`
-                                            : ''
-                                    }`}
-                                    onClick={() => navigate('/main')}
-                                >
-                                    {NAV_MAIN}
-                                </span>
-                                <span
-                                    className={`menu${
-                                        location.pathname.includes('/portfolio')
-                                            ? ' selected'
-                                            : ''
-                                    }`}
-                                    onClick={() => navigate('/portfolio/FENCE')}
-                                >
-                                    {NAV_PORTFOLIO}
-                                </span>
-                                <span
-                                    className={`menu${
-                                        location.pathname === '/about-us'
-                                            ? `${' '}selected`
-                                            : ''
-                                    }`}
-                                    onClick={() => navigate('/about-us')}
-                                >
-                                    {NAV_ABOUT}
-                                </span>
-                                <span
-                                    className={`menu ${
-                                        window.location.pathname === '/contacts'
-                                            ? `selected`
-                                            : ''
-                                    }`}
-                                    onClick={() => navigate('/contacts')}
-                                >
-                                    {NAV_CONTACTS}
-                                </span>
+                                {isMobile ? dropdownMenu() : collapsedMenu()}
                             </nav>
                         </div>
                     </div>

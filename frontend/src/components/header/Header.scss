@@ -8,21 +8,25 @@
     z-index: 1;
     color: $white-color;
     width: 100%;
+
     .header-sticky {
         font-family: Gotham SS Medium;
         color: $white-color;
         padding-top: 10px;
         padding-left: 40px;
         padding-right: 40px;
+
         .max-width-1440 {
             max-width: 1440px;
             margin: auto;
+
             .btn {
                 font-size: 14px;
                 padding: 8px 23px;
                 background-color: $azure-color;
                 border: none;
             }
+
             img {
                 height: 36px;
                 margin-right: 10px;
@@ -58,13 +62,13 @@
             transition: all .5s;
         }
     }
-    
 }
 
 .menu {
     cursor: pointer;
     margin-left: 50px;
     position: relative;
+
     &::after {
         content: "";
         display: block;
@@ -75,9 +79,10 @@
         width: 0%;
         right: 0;
     }
-    &:hover{
+
+    &:hover {
         &::after {
-            width: 100%; 
+            width: 100%;
             left: 0;
         }
     }
@@ -104,4 +109,35 @@
 
 .margin-top-10 {
     margin-top: 10px;
+}
+
+@media (max-width: 990px) {
+    .header-rect {
+        .header-sticky {
+            padding-left: 20px;
+            padding-right: 20px;
+
+            .max-width-1440 {
+                img {
+                    height: 30px; // Уменьшаем размер логотипа
+                }
+
+                .title {
+                    font-size: 16px; // Уменьшаем размер заголовка
+                }
+
+                .font-s-16 {
+                    font-size: 14px; // Уменьшаем размер шрифта меню
+                }
+
+                .numbers {
+                    display: none; // Скрываем номера на мобильных устройствах
+                }
+            }
+        }
+
+        .menu {
+            margin-left: 20px; // Уменьшаем отступы между пунктами меню
+        }
+    }
 }
